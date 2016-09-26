@@ -24,4 +24,4 @@ set_property(TARGET ${PROJECT_NAME} PROPERTY COMPILE_FLAGS "-Wall -Werror")
 
 
 # Author: Marcin Serwach
-# Tutorial: https://github.com/iblis-ms/tutorials/tree/master/cmake
+# Tutorial: https://github.com/iblis-ms/tutorials/tree/master/Cpp/cmake

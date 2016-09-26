@@ -19,4 +19,4 @@ After this lesson you will know how to:
 
 
 *Author: Marcin Serwach*
-*Tutorial: [https://github.com/iblis-ms/tutorials/tree/master/cmake](https://github.com/iblis-ms/tutorials/tree/master/cmake)*
+*Tutorial: [https://github.com/iblis-ms/tutorials/tree/master/Cpp/cmake](https://github.com/iblis-ms/tutorials/tree/master/Cpp/cmake)*

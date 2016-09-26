@@ -11,4 +11,4 @@ target_include_directories(${PROJECT_NAME} INTERFACE "Interface")
 
 
 # Author: Marcin Serwach
-# Tutorial: https://github.com/iblis-ms/tutorials/tree/master/cmake
+# Tutorial: https://github.com/iblis-ms/tutorials/tree/master/Cpp/cmake

@@ -1,5 +1,5 @@
 // Author: Marcin Serwach
-// Tutorial: https://github.com/iblis-ms/tutorials/tree/master/cmake
+// Tutorial: https://github.com/iblis-ms/tutorials/tree/master/Cpp/cmake
 
 #ifndef STATIC_LIBRARY_FACTORY_H_
 #define STATIC_LIBRARY_FACTORY_H_

@@ -1,5 +1,5 @@
 // Author: Marcin Serwach
-// Tutorial: https://github.com/iblis-ms/tutorials/tree/master/cmake
+// Tutorial: https://github.com/iblis-ms/tutorials/tree/master/Cpp/cmake
 
 #ifndef SHARED_LIBRARY_INTERFACE_H_
 #define SHARED_LIBRARY_INTERFACE_H_

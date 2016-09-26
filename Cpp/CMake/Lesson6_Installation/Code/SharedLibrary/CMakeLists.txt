@@ -26,4 +26,4 @@ install(TARGETS ${PROJECT_NAME}
 install(DIRECTORY Interface/ DESTINATION "${EXPORT_DIR}/include") # copy header files to the include directory
 
 # Author: Marcin Serwach
-# Tutorial: https://github.com/iblis-ms/tutorials/tree/master/cmake
+# Tutorial: https://github.com/iblis-ms/tutorials/tree/master/Cpp/cmake

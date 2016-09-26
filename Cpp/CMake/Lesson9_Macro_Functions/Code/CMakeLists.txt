@@ -122,4 +122,4 @@ message(STATUS "MACRO_VARIABLE=${MACRO_VARIABLE}")
 
 
 # Author: Marcin Serwach
-# Tutorial: https://github.com/iblis-ms/tutorials/tree/master/cmake
+# Tutorial: https://github.com/iblis-ms/tutorials/tree/master/Cpp/cmake

@@ -17,4 +17,4 @@ message(STATUS "Target: ${PROJECT_NAME} C++ standards: ${WHAT_IS_CPP_STANDARD}")
 
 
 # Author: Marcin Serwach
-# Tutorial: https://github.com/iblis-ms/tutorials/tree/master/cmake
+# Tutorial: https://github.com/iblis-ms/tutorials/tree/master/Cpp/cmake

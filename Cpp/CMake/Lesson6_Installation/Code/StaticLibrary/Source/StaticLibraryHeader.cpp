@@ -1,4 +1,6 @@
 // Author: Marcin Serwach
+// Tutorial: https://github.com/iblis-ms/tutorials/tree/master/Cpp/cmake
+
 #include "StaticLibraryHeader.h"
 
 #include <iostream>

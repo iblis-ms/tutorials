@@ -30,4 +30,4 @@ target_include_directories(${PROJECT_NAME} PRIVATE Headers) # Header files are i
 
 
 # Author: Marcin Serwach
-# Tutorial: https://github.com/iblis-ms/tutorials/tree/master/cmake
+# Tutorial: https://github.com/iblis-ms/tutorials/tree/master/Cpp/cmake

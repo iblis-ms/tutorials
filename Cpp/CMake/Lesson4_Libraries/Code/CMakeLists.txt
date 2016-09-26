@@ -10,4 +10,4 @@ add_subdirectory(StaticLibrary)
 add_subdirectory(Executable)
 
 # Author: Marcin Serwach
-# Tutorial: https://github.com/iblis-ms/tutorials/tree/master/cmake
+# Tutorial: https://github.com/iblis-ms/tutorials/tree/master/Cpp/cmake
