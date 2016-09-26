@@ -1,5 +1,5 @@
 // Author: Marcin Serwach
-// Tutorial: https://github.com/iblis-ms/tutorials/tree/master/GTest_GMock
+// Tutorial: https://github.com/iblis-ms/tutorials/tree/master/Cpp/GTest_GMock
 
 #include <iostream>
 
@@ -89,7 +89,7 @@ TEST_F(CMyTestCase, ExpectCall_simple_no_call)
 
   /* Output:
    [ RUN      ] CMyTestCase.ExpectCall_simple_no_call
-   /home/iblis/workspaces/tutorials/GTest_GMock/Lesson11_Expect_Call_Basics/Code/Tests/Code/Test.cpp:88: Failure
+   /home/iblis/workspaces/tutorials/Cpp/GTest_GMock/Lesson11_Expect_Call_Basics/Code/Tests/Code/Test.cpp:88: Failure
    Actual function call count doesn't match EXPECT_CALL(listenerMock, functionNoArg())...
    Expected: to be called once
    Actual: never called - unsatisfied and active
@@ -110,7 +110,7 @@ TEST_F(CMyTestCase, ExpectCall_simple_call_not_expected)
 
   /*
    [ RUN      ] CMyTestCase.ExpectCall_simple_call_not_expected
-   /home/iblis/workspaces/tutorials/GTest_GMock/Lesson11_Expect_Call_Basics/Code/Tests/Code/Test.cpp:105: Failure
+   /home/iblis/workspaces/tutorials/Cpp/GTest_GMock/Lesson11_Expect_Call_Basics/Code/Tests/Code/Test.cpp:105: Failure
    Mock function called more times than expected - returning directly.
    Function call: functionNoArg()
    Expected: to be never called
@@ -165,12 +165,12 @@ TEST_F(CMyTestCase, ExpectCall_simple_exactly_argument_fail)
   library.call_functionArg1(12);
 
   /* Output:
-   /home/iblis/workspaces/tutorials/GTest_GMock/Lesson11_Expect_Call_Basics/Code/Tests/Code/Test.cpp:152: EXPECT_CALL(listenerMock, functionArg1(argument))...
+   /home/iblis/workspaces/tutorials/Cpp/GTest_GMock/Lesson11_Expect_Call_Basics/Code/Tests/Code/Test.cpp:152: EXPECT_CALL(listenerMock, functionArg1(argument))...
    Expected arg #0: is equal to 10
    Actual: 12
    Expected: to be called once
    Actual: never called - unsatisfied and active
-   /home/iblis/workspaces/tutorials/GTest_GMock/Lesson11_Expect_Call_Basics/Code/Tests/Code/Test.cpp:152: Failure
+   /home/iblis/workspaces/tutorials/Cpp/GTest_GMock/Lesson11_Expect_Call_Basics/Code/Tests/Code/Test.cpp:152: Failure
    Actual function call count doesn't match EXPECT_CALL(listenerMock, functionArg1(argument))...
    Expected: to be called once
    Actual: never called - unsatisfied and active
@@ -197,7 +197,7 @@ TEST_F(CMyTestCase, ExpectCall_simple_exactly_argument_fail_twice)
    Function call: functionArg1(12)
    Google Mock tried the following 1 expectation, but it didn't match:
 
-   /home/iblis/workspaces/tutorials/GTest_GMock/Lesson11_Expect_Call_Basics/Code/Tests/Code/Test.cpp:175: EXPECT_CALL(listenerMock, functionArg1(argument))...
+   /home/iblis/workspaces/tutorials/Cpp/GTest_GMock/Lesson11_Expect_Call_Basics/Code/Tests/Code/Test.cpp:175: EXPECT_CALL(listenerMock, functionArg1(argument))...
    Expected arg #0: is equal to 10
    Actual: 12
    Expected: to be called once

@@ -21,4 +21,4 @@ target_link_libraries(${PROJECT_NAME} HeaderOnlyLibrary SharedLibrary StaticLibr
 
 
 # Author: Marcin Serwach
-# Tutorial: https://github.com/iblis-ms/tutorials/tree/master/Cpp/cmake
+# Tutorial: https://github.com/iblis-ms/tutorials/tree/master/Cpp/CMake

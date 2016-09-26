@@ -13,4 +13,4 @@ install(DIRECTORY Interface/ DESTINATION "${EXPORT_DIR}/include") # Interface/ -
 
 
 # Author: Marcin Serwach
-# Tutorial: https://github.com/iblis-ms/tutorials/tree/master/Cpp/cmake
+# Tutorial: https://github.com/iblis-ms/tutorials/tree/master/Cpp/CMake

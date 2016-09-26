@@ -7,4 +7,4 @@ add_library(${LIBRARY_NAME} INTERFACE)
 target_include_directories(${LIBRARY_NAME} INTERFACE Interface)
 
 # Author: Marcin Serwach
-# Tutorial: https://github.com/iblis-ms/tutorials/tree/master/GTest_GMock
+# Tutorial: https://github.com/iblis-ms/tutorials/tree/master/Cpp/GTest_GMock

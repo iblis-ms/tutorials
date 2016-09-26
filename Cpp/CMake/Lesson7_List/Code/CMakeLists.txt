@@ -1,8 +1,8 @@
-cmake_minimum_required(VERSION 3.5.2 FATAL_ERROR)
+CMake_minimum_required(VERSION 3.5.2 FATAL_ERROR)
 project(CMakeLesson7) 
 
 # List is a often used structure in CMake, so let's look it closer.
-# Documentation: https://cmake.org/cmake/help/v3.0/command/list.html
+# Documentation: https://CMake.org/CMake/help/v3.0/command/list.html
 # Moreover we can look at calling method and how them should be used.
 # Each example starts with operation declaration. 
 # Let's check a few examples.
@@ -41,4 +41,4 @@ message(STATUS "myListElements=${myListElements}")
 
 
 # Author: Marcin Serwach
-# Tutorial: https://github.com/iblis-ms/tutorials/tree/master/Cpp/cmake
+# Tutorial: https://github.com/iblis-ms/tutorials/tree/master/Cpp/CMake

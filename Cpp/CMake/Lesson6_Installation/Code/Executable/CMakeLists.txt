@@ -23,4 +23,4 @@ install(TARGETS ${PROJECT_NAME}
 
 
 # Author: Marcin Serwach
-# Tutorial: https://github.com/iblis-ms/tutorials/tree/master/Cpp/cmake
+# Tutorial: https://github.com/iblis-ms/tutorials/tree/master/Cpp/CMake

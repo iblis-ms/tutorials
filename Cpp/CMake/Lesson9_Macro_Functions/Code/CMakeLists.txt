@@ -1,4 +1,4 @@
-cmake_minimum_required(VERSION 3.5.2 FATAL_ERROR)
+CMake_minimum_required(VERSION 3.5.2 FATAL_ERROR)
 
 #################### FUNCTION - simple
 message(STATUS "---------------------------------------------------------")
@@ -63,7 +63,7 @@ function (function_parsing_arguments)
   # <one_value_keywords> - pattern of arguments with one value
   # <multi_value_keywords> - pattern of arguments with variadic values
   # args.. - function arguments
-  cmake_parse_arguments(VARIABLE_PREFIX "${OPTIONAL_ARGUMENTS_PATTERN}" "${ONE_ARGUMENT_PATTERN}" "${MULTI_ARGUMENT_PATTERN}" ${ARGN} )
+  CMake_parse_arguments(VARIABLE_PREFIX "${OPTIONAL_ARGUMENTS_PATTERN}" "${ONE_ARGUMENT_PATTERN}" "${MULTI_ARGUMENT_PATTERN}" ${ARGN} )
 
   if (${VARIABLE_PREFIX_OPTIONAL_VAR1_NAME}) # True if the argument present
     message(STATUS "VARIABLE_PREFIX_OPTIONAL_VAR1_NAME=${VARIABLE_PREFIX_OPTIONAL_VAR1_NAME}") # True if the argument present
@@ -122,4 +122,4 @@ message(STATUS "MACRO_VARIABLE=${MACRO_VARIABLE}")
 
 
 # Author: Marcin Serwach
-# Tutorial: https://github.com/iblis-ms/tutorials/tree/master/Cpp/cmake
+# Tutorial: https://github.com/iblis-ms/tutorials/tree/master/Cpp/CMake

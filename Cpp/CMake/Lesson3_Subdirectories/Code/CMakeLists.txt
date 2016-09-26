@@ -1,4 +1,4 @@
-cmake_minimum_required(VERSION 3.5.2 FATAL_ERROR) # minimal version should be required
+CMake_minimum_required(VERSION 3.5.2 FATAL_ERROR) # minimal version should be required
                                                   # FATAL_ERROR - error if you have older 
                                                   # version
 
@@ -30,4 +30,4 @@ target_include_directories(${PROJECT_NAME} PRIVATE Headers) # Header files are i
 
 
 # Author: Marcin Serwach
-# Tutorial: https://github.com/iblis-ms/tutorials/tree/master/Cpp/cmake
+# Tutorial: https://github.com/iblis-ms/tutorials/tree/master/Cpp/CMake

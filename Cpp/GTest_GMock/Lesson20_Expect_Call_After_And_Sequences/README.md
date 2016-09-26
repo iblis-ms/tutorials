@@ -14,4 +14,4 @@ After this lesson you will know how to:
 - Mock::VerifyAndClear
 
 *Author: Marcin Serwach*
-*Tutorial: [https://github.com/iblis-ms/tutorials/tree/master/GTest_GMock](https://github.com/iblis-ms/tutorials/tree/master/GTest_GMock)*
+*Tutorial: [https://github.com/iblis-ms/tutorials/tree/master/Cpp/GTest_GMock](https://github.com/iblis-ms/tutorials/tree/master/Cpp/GTest_GMock)*

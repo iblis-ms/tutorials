@@ -19,4 +19,4 @@ target_include_directories(${LIBRARY_NAME} PRIVATE ${GTEST_INCLUDE_DIRS})
 set_property(TARGET ${LIBRARY_NAME} PROPERTY CXX_STANDARD 11)
 
 # Author: Marcin Serwach
-# Tutorial: https://github.com/iblis-ms/tutorials/tree/master/GTest_GMock
+# Tutorial: https://github.com/iblis-ms/tutorials/tree/master/Cpp/GTest_GMock

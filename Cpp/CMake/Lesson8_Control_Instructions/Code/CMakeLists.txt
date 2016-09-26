@@ -1,8 +1,8 @@
-cmake_minimum_required(VERSION 3.5.2 FATAL_ERROR)
+CMake_minimum_required(VERSION 3.5.2 FATAL_ERROR)
 project(CMakeLesson8) 
 
 ##### IF
-# See https://cmake.org/cmake/help/v3.5/command/if.html
+# See https://CMake.org/CMake/help/v3.5/command/if.html
 ######## Numeric
 set(varNumeric 15)
 
@@ -28,7 +28,7 @@ endif ()
 
 
 ##### WHILE
-# See https://cmake.org/cmake/help/v3.0/command/while.html
+# See https://CMake.org/CMake/help/v3.0/command/while.html
 set(whileCounter 1)
 
 while (${whileCounter} LESS 5) # the same format of the condition as for the IF statement
@@ -37,7 +37,7 @@ while (${whileCounter} LESS 5) # the same format of the condition as for the IF 
 endwhile ()
 
 ##### FOReach
-# See https://cmake.org/cmake/help/v3.0/command/foreach.html
+# See https://CMake.org/CMake/help/v3.0/command/foreach.html
 foreach (foreachItem RANGE 0 10 2) # RANGE start stop step
   message(STATUS "foreachItem=${foreachItem}") 
 endforeach ()
@@ -50,4 +50,4 @@ endforeach ()
 
 
 # Author: Marcin Serwach
-# Tutorial: https://github.com/iblis-ms/tutorials/tree/master/Cpp/cmake
+# Tutorial: https://github.com/iblis-ms/tutorials/tree/master/Cpp/CMake
