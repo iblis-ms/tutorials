@@ -51,7 +51,7 @@ public:
 // GTest has TEST_F macro. In the brackets you have to write a name of class - a test case and the name of a particular test.
 // GTest creates new class which extends the class given in the 1st argument.
 // The content of TEST_F is a test body.
-TEST_F(CMyTestCase, testCase_fail)
+TEST_F(CMyTestCase, testCase_fail_FAIL)
 {
   // SetUp and TearDown are called even test is failing.
   FAIL();

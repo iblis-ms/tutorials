@@ -13,7 +13,7 @@ using namespace ::testing;
 // GTest has TEST macro. In the brackets you have to write a name of a test case and a test name.
 // GTest creates a class whose name will be a concatenation of values given in brackets.
 // The content of TEST is a test body.
-TEST(TestCase, testCase_fatal_fail)
+TEST(TestCase, testCase_fatal_fail_FAIL)
 {
   // The fatal error stops executing a test.
   FAIL()<< "This is a optional description for the fatal error";
@@ -27,7 +27,7 @@ TEST(TestCase, testCase_fatal_fail)
    */
 }
 
-TEST(TestCase, testCase_nonfatal_fail)
+TEST(TestCase, testCase_nonfatal_fail_FAIL)
 {
   // The nonfatal error doesn't stop executing test.
   ADD_FAILURE()<< "This is a optional description for the nonfatal error";

@@ -13,7 +13,7 @@ class CMyTestCase1 : public Test
 {
 };
 
-TEST_F(CMyTestCase1, testCase_fail)
+TEST_F(CMyTestCase1, testCase_fail_FAIL)
 {
   FAIL();
 }
@@ -29,7 +29,7 @@ class CMyTestCase2 : public Test
 {
 };
 
-TEST_F(CMyTestCase2, testCase_fail)
+TEST_F(CMyTestCase2, testCase_fail_FAIL)
 {
   FAIL();
 }
