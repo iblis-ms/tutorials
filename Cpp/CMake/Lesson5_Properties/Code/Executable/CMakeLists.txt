@@ -1,0 +1,20 @@
+project(Executable)
+
+add_executable(${PROJECT_NAME} "Source/ExecutableHeader.cpp" "Source/main.cpp")
+
+target_include_directories(${PROJECT_NAME} PRIVATE "Headers")
+
+target_link_libraries(${PROJECT_NAME}  StaticLibrary)
+
+# Each target, source file, directory, etc. can have properties.
+# The list of properties: https://cmake.org/cmake/help/v3.0/manual/cmake-properties.7.html
+# You can get a property's value. The first argument is an output variable name.
+# Below a C++ standard of StaticLibrary is retrieved.
+get_property(WHAT_IS_CPP_STANDARD TARGET ${PROJECT_NAME} PROPERTY CXX_STANDARD)
+
+# Displays a result.
+message(STATUS "Target: ${PROJECT_NAME} C++ standards: ${WHAT_IS_CPP_STANDARD}")
+
+
+# Author: Marcin Serwach
+# Tutorial: https://github.com/iblis-ms/tutorials/tree/master/Cpp/cmake
