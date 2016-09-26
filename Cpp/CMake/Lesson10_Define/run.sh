@@ -8,5 +8,5 @@ fi
 mkdir "$output"
 
 cd "$output"
-cmake ../Code -DMY_CMAKE_ARGUMENT=123
+CMake ../Code -DMY_CMAKE_ARGUMENT=123
 make

@@ -1,5 +1,5 @@
 // Author: Marcin Serwach
-// Tutorial: https://github.com/iblis-ms/tutorials/tree/master/Cpp/cmake
+// Tutorial: https://github.com/iblis-ms/tutorials/tree/master/Cpp/CMake
 
 #ifndef LIBRARY_INTERFACE_H_
 #define LIBRARY_INTERFACE_H_

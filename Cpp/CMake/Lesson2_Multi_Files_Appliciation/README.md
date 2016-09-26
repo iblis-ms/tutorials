@@ -3,7 +3,7 @@ This lesson shows how to use CMake program on a compile multi-files application.
 
 Linux, OSX: Run command to generates Makefile files (assumed that you are in sibling directory of Code directory):
 ```
-cmake ../Code
+CMake ../Code
 ```
 To compile:
 ```
@@ -18,4 +18,4 @@ After this lesson you will know how to:
 
 
 *Author: Marcin Serwach*
-*Tutorial: [https://github.com/iblis-ms/tutorials/tree/master/Cpp/cmake](https://github.com/iblis-ms/tutorials/tree/master/Cpp/cmake)*
+*Tutorial: [https://github.com/iblis-ms/tutorials/tree/master/Cpp/CMake](https://github.com/iblis-ms/tutorials/tree/master/Cpp/CMake)*

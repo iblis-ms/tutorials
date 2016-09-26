@@ -1,5 +1,5 @@
 // Author: Marcin Serwach
-// Tutorial: https://github.com/iblis-ms/tutorials/tree/master/Cpp/cmake
+// Tutorial: https://github.com/iblis-ms/tutorials/tree/master/Cpp/CMake
 
 #ifndef EXECUTABLE_HEADER_H_
 #define EXECTUABLE_HEADER_H_

@@ -1,5 +1,5 @@
 # Locate the Google C++ Mocking Framework.
-# (This file is almost an identical copy of the original FindGTest.cmake file,
+# (This file is almost an identical copy of the original FindGTest.CMake file,
 #  feel free to use it as it is or modify it for your own needs.)
 #
 #

@@ -23,7 +23,7 @@ target_include_directories(${PROJECT_NAME} PUBLIC Interface PRIVATE Headers)
 #
 # Compile GTest and GMock:
 #
-# cmake ../ && make
+# CMake ../ && make
 #
 # Install GTest and GMock in your machine: 
 #
@@ -34,8 +34,8 @@ target_include_directories(${PROJECT_NAME} PUBLIC Interface PRIVATE Headers)
 # finding GTest is provided by CMake module
 find_package(GTest)
 
-# To find GMock I added CMake module: Code/CMakeSupport/FindGMock.cmake downloaded from https://github.com/triglav/cmake-findgmock.
-# To find GMock, CMake is looking for FindGMock.cmake - prefix Find and extension cmake. 
+# To find GMock I added CMake module: Code/CMakeSupport/FindGMock.CMake downloaded from https://github.com/triglav/CMake-findgmock.
+# To find GMock, CMake is looking for FindGMock.CMake - prefix Find and extension CMake. 
 # CMake is checking location in CMAKE_MODULE_PATH to find this file. 
 # Therefore we need to update it. 
 set(CMAKE_MODULE_PATH ${CMAKE_MODULE_PATH} "${${PROJECT_NAME}_SOURCE_DIR}/../CMakeSupport/")
@@ -58,4 +58,4 @@ add_test(NAME ${TEST_TARGET_NAME} COMMAND ${TEST_TARGET_NAME})
 
 
 # Author: Marcin Serwach
-# Tutorial: https://github.com/iblis-ms/tutorials/tree/master/Cpp/cmake
+# Tutorial: https://github.com/iblis-ms/tutorials/tree/master/Cpp/CMake

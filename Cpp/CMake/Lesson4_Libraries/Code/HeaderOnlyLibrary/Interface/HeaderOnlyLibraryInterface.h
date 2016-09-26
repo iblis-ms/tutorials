@@ -1,5 +1,5 @@
 // Author: Marcin Serwach
-// Tutorial: https://github.com/iblis-ms/tutorials/tree/master/Cpp/cmake
+// Tutorial: https://github.com/iblis-ms/tutorials/tree/master/Cpp/CMake
 
 #ifndef HEADER_ONLY_LIBRARY_INTERFACE_H_
 #define HEADER_ONLY_LIBRARY_INTERFACE_H_
