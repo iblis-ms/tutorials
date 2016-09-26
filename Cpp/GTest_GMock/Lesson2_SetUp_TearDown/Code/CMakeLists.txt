@@ -1,6 +1,6 @@
 cmake_minimum_required(VERSION 3.5.2 FATAL_ERROR)
 
-project(GTest_GMock_Lesson2)
+project(Cpp/GTest_GMock_Lesson2)
 
 # Enables testing
 enable_testing()
@@ -9,6 +9,6 @@ enable_testing()
 add_subdirectory(Tests)
 
 # Author: Marcin Serwach
-# Tutorial: https://github.com/iblis-ms/tutorials/tree/master/GTest_GMock
+# Tutorial: https://github.com/iblis-ms/tutorials/tree/master/Cpp/GTest_GMock
 
 

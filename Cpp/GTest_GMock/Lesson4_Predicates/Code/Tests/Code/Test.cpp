@@ -1,5 +1,5 @@
 // Author: Marcin Serwach
-// Tutorial: https://github.com/iblis-ms/tutorials/tree/master/GTest_GMock
+// Tutorial: https://github.com/iblis-ms/tutorials/tree/master/Cpp/GTest_GMock
 
 #include "Library.h"
 
@@ -80,7 +80,7 @@ TEST_F(CMyTestCase, testCase_1ArgPredicateWithResult)
       /*
        Failure message:
        [ RUN      ] CMyTestCase.testCase_1ArgPredicateWithResult
-       /home/iblis/workspaces/tutorials/GTest_GMock/Lesson4_Predicates/Code/Tests/Code/Test.cpp:84: Failure
+       /home/iblis/workspaces/tutorials/Cpp/GTest_GMock/Lesson4_Predicates/Code/Tests/Code/Test.cpp:84: Failure
        Value of: isABCStringWithResult(CLibrary::getCStyleString())
        Actual: true (abc is abc)
        Expected: false
@@ -124,7 +124,7 @@ TEST_F(CMyTestCase, testCase_predicateWithFormatter)
       /*
        Failure message:
        [ RUN      ] CMyTestCase.testCase_predicateWithFormatter
-       /home/iblis/workspaces/tutorials/GTest_GMock/Lesson4_Predicates/Code/Tests/Code/Test.cpp:123: Failure
+       /home/iblis/workspaces/tutorials/Cpp/GTest_GMock/Lesson4_Predicates/Code/Tests/Code/Test.cpp:123: Failure
        variable named: "abc1"=abc1 is NOT equal to variable CLibrary::getCStyleString()=abc
        [  FAILED  ] CMyTestCase.testCase_predicateWithFormatter (0 ms)
        */

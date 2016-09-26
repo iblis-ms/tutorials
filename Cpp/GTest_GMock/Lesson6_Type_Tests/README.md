@@ -11,4 +11,4 @@ After this lesson you will know how to:
 
 
 *Author: Marcin Serwach*
-*Tutorial: [https://github.com/iblis-ms/tutorials/tree/master/GTest_GMock](https://github.com/iblis-ms/tutorials/tree/master/GTest_GMock)*
+*Tutorial: [https://github.com/iblis-ms/tutorials/tree/master/Cpp/GTest_GMock](https://github.com/iblis-ms/tutorials/tree/master/Cpp/GTest_GMock)*

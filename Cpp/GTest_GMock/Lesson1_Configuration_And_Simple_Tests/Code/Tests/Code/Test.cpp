@@ -1,5 +1,5 @@
 // Author: Marcin Serwach
-// Tutorial: https://github.com/iblis-ms/tutorials/tree/master/GTest_GMock
+// Tutorial: https://github.com/iblis-ms/tutorials/tree/master/Cpp/GTest_GMock
 
 #include "Library.h"
 #include <iostream>
@@ -20,7 +20,7 @@ TEST(TestCase, testCase_fatal_fail)
   std::cout << "This will not be displayed, because the fatal error was before. \n";
   /*
    [ RUN      ] TestCase.testCase_fatal_fail
-   /home/iblis/workspaces/tutorials/GTest_GMock/Lesson1_Configuration_And_Simple_Tests/Code/Tests/Code/Test.cpp:14: Failure <----- The path will be different on your machine.
+   /home/iblis/workspaces/tutorials/Cpp/GTest_GMock/Lesson1_Configuration_And_Simple_Tests/Code/Tests/Code/Test.cpp:14: Failure <----- The path will be different on your machine.
    Failed
    This is a optional description for the fatal error <------ Here is the optional message
    [  FAILED  ] TestCase.testCase1_fatal_fail (0 ms)

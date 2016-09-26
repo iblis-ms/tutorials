@@ -35,4 +35,4 @@ set_target_properties(${TEST_TARGET_NAME} PROPERTIES COMPILE_FLAGS -pthread LINK
 add_test(NAME ${TEST_TARGET_NAME} COMMAND ${TEST_TARGET_NAME})
 
 # Author: Marcin Serwach
-# Tutorial: https://github.com/iblis-ms/tutorials/tree/master/GTest_GMock
+# Tutorial: https://github.com/iblis-ms/tutorials/tree/master/Cpp/GTest_GMock
