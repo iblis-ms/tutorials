@@ -79,7 +79,7 @@ public:
   }
 };
 
-TEST_F(CMyTestCase, testCase_fail)
+TEST_F(CMyTestCase, testCase_fail_FAIL)
 {
   FAIL();
 }

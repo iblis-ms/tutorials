@@ -73,7 +73,7 @@ AssertionResult isABCStringWithResult(const char* aTxt)
   }
 }
 
-TEST_F(CMyTestCase, testCase_1ArgPredicateWithResult)
+TEST_F(CMyTestCase, testCase_1ArgPredicateWithResult_FAIL)
 {
   // Predicates can return AssertResult object, which can be easily used to write a proper description.
   ASSERT_FALSE(isABCStringWithResult(CLibrary::getCStyleString())); // Check failure message.
@@ -117,7 +117,7 @@ AssertionResult myPredicateFormatter(
   }
 }
 
-TEST_F(CMyTestCase, testCase_predicateWithFormatter)
+TEST_F(CMyTestCase, testCase_predicateWithFormatter_FAIL)
 {
   // You can write your predicates with a proper formatter. It is useful when checked objects don't have overloaded operator<< for std::ostream.
   ASSERT_PRED_FORMAT2(myPredicateFormatter, "abc1", CLibrary::getCStyleString()); // Check failure message.

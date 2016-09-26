@@ -78,7 +78,7 @@ TEST_F(CMyTestCase, ExpectCall_simple)
 }
 
 ///////////////////////////////////////////////////////
-TEST_F(CMyTestCase, ExpectCall_simple_no_call)
+TEST_F(CMyTestCase, ExpectCall_simple_no_call_FAIL)
 {
   IListenerMock listenerMock; // creates object of mock class
   CLibrary library { &listenerMock };
@@ -98,7 +98,7 @@ TEST_F(CMyTestCase, ExpectCall_simple_no_call)
 }
 
 ///////////////////////////////////////////////////////
-TEST_F(CMyTestCase, ExpectCall_simple_call_not_expected)
+TEST_F(CMyTestCase, ExpectCall_simple_call_not_expected_FAIL)
 {
   IListenerMock listenerMock; // creates object of mock class
   CLibrary library { &listenerMock };
@@ -153,7 +153,7 @@ TEST_F(CMyTestCase, ExpectCall_simple_exactly_argument)
 }
 
 ///////////////////////////////////////////////////////
-TEST_F(CMyTestCase, ExpectCall_simple_exactly_argument_fail)
+TEST_F(CMyTestCase, ExpectCall_simple_exactly_argument_fail_FAIL)
 {
   IListenerMock listenerMock; // creates object of mock class
   CLibrary library { &listenerMock };
@@ -179,7 +179,7 @@ TEST_F(CMyTestCase, ExpectCall_simple_exactly_argument_fail)
 }
 
 ///////////////////////////////////////////////////////
-TEST_F(CMyTestCase, ExpectCall_simple_exactly_argument_fail_twice)
+TEST_F(CMyTestCase, ExpectCall_simple_exactly_argument_fail_twice_FAIL)
 {
   IListenerMock listenerMock; // creates object of mock class
   CLibrary library { &listenerMock };
