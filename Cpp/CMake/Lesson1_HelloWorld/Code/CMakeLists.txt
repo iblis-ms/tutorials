@@ -15,4 +15,4 @@ add_executable(${PROJECT_NAME} main.cpp) # creates executable file.
                                          # You can provide more source files.
 
 # Author: Marcin Serwach
-# Tutorial: https://github.com/iblis-ms/tutorials/tree/master/cmake
+# Tutorial: https://github.com/iblis-ms/tutorials/tree/master/Cpp/cmake

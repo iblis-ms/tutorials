@@ -10,19 +10,19 @@ CMake is a program, that provides a system independent build system. CMake is us
 Tutorial is splitted into several lessons. Each lesson has its own README.md that shows what is the target of lesson. However all CMake code related to the topic of lesson are documented inside CMakeLists.txt or *.cmake files. Each lesson has also run.sh script to build programs.
 
 #Table of content
-1. [First, one source file executable program under CMake control](https://github.com/iblis-ms/tutorials/tree/master/C%2B%2B/cmake/Lesson1_HelloWorld)
-2. [Multi files program. Displaying messages.](https://github.com/iblis-ms/tutorials/tree/master/C%2B%2B/cmake/Lesson2_Multi_Files_Appliciation)
-3. [Multi folder program. Public, private headers - API.](https://github.com/iblis-ms/tutorials/tree/master/C%2B%2B/cmake/Lesson3_Subdirectories)
-4. [Header only library, static library, shared library - Fundamentals of CMake](https://github.com/iblis-ms/tutorials/tree/master/C%2B%2B/cmake/Lesson4_Libraries)
-5. [Target properties - (i. e. C++11 support)](https://github.com/iblis-ms/tutorials/tree/master/C%2B%2B/cmake/Lesson5_Properties)
-6. [Install](https://github.com/iblis-ms/tutorials/tree/master/C%2B%2B/cmake/Lesson6_Installation)
-7. [List structure](https://github.com/iblis-ms/tutorials/tree/master/C%2B%2B/cmake/Lesson7_List)
-8. [If, while, etc.](https://github.com/iblis-ms/tutorials/tree/master/C%2B%2B/cmake/Lesson8_Control_Instructions)
-9. [Functions and macros](https://github.com/iblis-ms/tutorials/tree/master/C%2B%2B/cmake/Lesson9_Macro_Functions)
-10. [Define and passing CMake arguments](https://github.com/iblis-ms/tutorials/tree/master/C%2B%2B/cmake/Lesson10_Define)
-11. [Custom command and custom target](https://github.com/iblis-ms/tutorials/tree/master/C%2B%2B/cmake/Lesson11_Custom_Command)
-12. [Find packages](https://github.com/iblis-ms/tutorials/tree/master/C%2B%2B/cmake/Lesson12_Find_Package)
-13. [Testing](https://github.com/iblis-ms/tutorials/tree/master/C%2B%2B/cmake/Lesson13_Testing)
+1. [First, one source file executable program under CMake control](https://github.com/iblis-ms/tutorials/tree/master/Cpp/cmake/Lesson1_HelloWorld)
+2. [Multi files program. Displaying messages.](https://github.com/iblis-ms/tutorials/tree/master/Cpp/cmake/Lesson2_Multi_Files_Appliciation)
+3. [Multi folder program. Public, private headers - API.](https://github.com/iblis-ms/tutorials/tree/master/Cpp/cmake/Lesson3_Subdirectories)
+4. [Header only library, static library, shared library - Fundamentals of CMake](https://github.com/iblis-ms/tutorials/tree/master/Cpp/cmake/Lesson4_Libraries)
+5. [Target properties - (i. e. C++11 support)](https://github.com/iblis-ms/tutorials/tree/master/Cpp/cmake/Lesson5_Properties)
+6. [Install](https://github.com/iblis-ms/tutorials/tree/master/Cpp/cmake/Lesson6_Installation)
+7. [List structure](https://github.com/iblis-ms/tutorials/tree/master/Cpp/cmake/Lesson7_List)
+8. [If, while, etc.](https://github.com/iblis-ms/tutorials/tree/master/Cpp/cmake/Lesson8_Control_Instructions)
+9. [Functions and macros](https://github.com/iblis-ms/tutorials/tree/master/Cpp/cmake/Lesson9_Macro_Functions)
+10. [Define and passing CMake arguments](https://github.com/iblis-ms/tutorials/tree/master/Cpp/cmake/Lesson10_Define)
+11. [Custom command and custom target](https://github.com/iblis-ms/tutorials/tree/master/Cpp/cmake/Lesson11_Custom_Command)
+12. [Find packages](https://github.com/iblis-ms/tutorials/tree/master/Cpp/cmake/Lesson12_Find_Package)
+13. [Testing](https://github.com/iblis-ms/tutorials/tree/master/Cpp/cmake/Lesson13_Testing)
 
 #Author
 Marcin Serwach
