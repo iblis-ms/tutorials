@@ -3,13 +3,16 @@ This tutorial contains one project that shows how to OCMock in version 3.3.1 and
 
 #CocoaPods
 Both OCMock and OCHamcrest are downloaded by CocoaPods. To compile tutorial project you need to run:
-```
+
+```bash
 pod install
 ```
+
 After that you will have a workspace file `OCMock_OCHamcrest.xcworkspace` that should be opened in Xcode.
 
 #Lesson
 This tutorial was organized as one Xcode project with a library target `OCMock_OCHamcrest` and a test target `OCMock_OCHamcrest_Tests`. The test target contains several files. Each one touches one kine od features.
+
 1. Simple matchers
 2. Advanced matchers
 3. Return value from mocked method
