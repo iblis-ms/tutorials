@@ -1,0 +1,15 @@
+source 'https://github.com/CocoaPods/Specs.git'
+
+use_frameworks!
+
+target 'OCMockTutorial_Tests' do
+  pod 'OCMock', '~> 3.3.1'
+  pod 'OCHamcrest', '~> 6.0'
+end
+
+
+post_install do |installer|
+    installer.pods_project.build_configurations.each do |config|
+        config.build_settings['ONLY_ACTIVE_ARCH'] = 'NO'
+    end
+end

@@ -3,3 +3,5 @@
 *~
 **/Eclipse_Project
 **/.project
+**/*.xcworkspace
+**/Pods
