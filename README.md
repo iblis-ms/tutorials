@@ -1,5 +1,5 @@
 #Tutorials
-This GitHub repository contains some tutorial with C++ related libraries and tools. The number of tutorials will be increasing in the future. 
+This GitHub repository contains some tutorials with C++ and other languages related libraries and tools. The number of tutorials will be increasing in the future. 
 
 #Author
 Marcin Serwach

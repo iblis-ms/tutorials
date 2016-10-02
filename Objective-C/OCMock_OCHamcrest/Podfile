@@ -2,7 +2,7 @@ source 'https://github.com/CocoaPods/Specs.git'
 
 use_frameworks!
 
-target 'OCMockTutorial_Tests' do
+target 'OCMock_OCHamcrest_Tests' do
   pod 'OCMock', '~> 3.3.1'
   pod 'OCHamcrest', '~> 6.0'
 end
