@@ -1,8 +1,8 @@
-#OCMock and OCHamcrest tutorial
-This tutorial contains one project that shows how to OCMock in version 3.3.1 and OCHamcrest 6.0. Both of them are widely used libraries for testing Objective-C code. OCMock provides some methods to create mocks and checking if expected calls was called with proper arguments. OCHamcrest contains several useful matchers.
+#OCMock, OCHamcrest and KNMParametrizedTest tutorial
+This tutorial contains one project that shows how to OCMock in version 3.3.1, OCHamcrest 6.0 and KNMParametrizedTest. All of them are widely used libraries for testing Objective-C code. OCMock provides some methods to create mocks and checking if expected calls was called with proper arguments. OCHamcrest contains several useful matchers. KNMParametrizedTest helps writing parametrized tests.s
 
 #CocoaPods
-Both OCMock and OCHamcrest are downloaded by CocoaPods. To compile tutorial project you need to run:
+OCMock, OCHamcrest and KNMParametrizedTest are downloaded by CocoaPods. To compile tutorial project you need to run:
 
 ```bash
 pod install
@@ -27,6 +27,7 @@ This tutorial was organized as one Xcode project with a library target `OCMock_O
 12. OCHamcrest - container matchers
 13. OCHamcrest - object matchers
 14. OCHamcrest - linking matchers
+15. KNMParametrizedTest - parametrized tests
 
 #Author
 Marcin Serwach

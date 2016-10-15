@@ -1,15 +1,18 @@
 PODS:
+  - KNMParametrizedTests (0.1.2)
   - OCHamcrest (6.0.0)
   - OCMock (3.3.1)
 
 DEPENDENCIES:
+  - KNMParametrizedTests
   - OCHamcrest (~> 6.0)
   - OCMock (~> 3.3.1)
 
 SPEC CHECKSUMS:
+  KNMParametrizedTests: 33378a3b2da4ddeafa8d1818db78c6e2c944e402
   OCHamcrest: fc8ab38149b97df8db8029a3f2157c951bf9081d
   OCMock: f3f61e6eaa16038c30caa5798c5e49d3307b6f22
 
-PODFILE CHECKSUM: b3b5e66637c0519868860d5020c8f39881ed8fa7
+PODFILE CHECKSUM: 067bdb46ef88c9d018cb2dc75db26bd6fb6180b3
 
-COCOAPODS: 1.1.0.rc.2
+COCOAPODS: 1.0.1

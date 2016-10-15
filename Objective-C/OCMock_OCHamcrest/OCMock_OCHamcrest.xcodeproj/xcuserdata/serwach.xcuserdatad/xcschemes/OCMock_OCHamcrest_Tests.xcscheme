@@ -16,7 +16,7 @@
             skipped = "NO">
             <BuildableReference
                BuildableIdentifier = "primary"
-               BlueprintIdentifier = "1897022F1DA145E100289DEC"
+               BlueprintIdentifier = "183E78F61DB15DBF00D3D272"
                BuildableName = "OCMock_OCHamcrest_Tests.xctest"
                BlueprintName = "OCMock_OCHamcrest_Tests"
                ReferencedContainer = "container:OCMock_OCHamcrest.xcodeproj">

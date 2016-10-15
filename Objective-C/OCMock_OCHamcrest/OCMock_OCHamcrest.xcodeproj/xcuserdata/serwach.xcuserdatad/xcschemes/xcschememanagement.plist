@@ -9,10 +9,20 @@
 			<key>orderHint</key>
 			<integer>0</integer>
 		</dict>
+		<key>OCMock_OCHamcrest_Tests.xcscheme</key>
+		<dict>
+			<key>orderHint</key>
+			<integer>1</integer>
+		</dict>
 	</dict>
 	<key>SuppressBuildableAutocreation</key>
 	<dict>
-		<key>1897021F1DA145CE00289DEC</key>
+		<key>183E78DB1DB15D6700D3D272</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>183E78F61DB15DBF00D3D272</key>
 		<dict>
 			<key>primary</key>
 			<true/>

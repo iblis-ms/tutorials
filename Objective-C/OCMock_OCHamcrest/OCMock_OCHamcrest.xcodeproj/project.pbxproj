@@ -7,73 +7,187 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		189702241DA145CF00289DEC /* OCMock_OCHamcrest.h in Headers */ = {isa = PBXBuildFile; fileRef = 189702231DA145CF00289DEC /* OCMock_OCHamcrest.h */; };
-		189702261DA145CF00289DEC /* OCMock_OCHamcrest.m in Sources */ = {isa = PBXBuildFile; fileRef = 189702251DA145CF00289DEC /* OCMock_OCHamcrest.m */; };
+		183E78F01DB15D8F00D3D272 /* CustomClass.m in Sources */ = {isa = PBXBuildFile; fileRef = 183E78E91DB15D8F00D3D272 /* CustomClass.m */; };
+		183E78F11DB15D8F00D3D272 /* Library.m in Sources */ = {isa = PBXBuildFile; fileRef = 183E78EC1DB15D8F00D3D272 /* Library.m */; };
+		183E78F21DB15D8F00D3D272 /* ListenerAdapter.m in Sources */ = {isa = PBXBuildFile; fileRef = 183E78EE1DB15D8F00D3D272 /* ListenerAdapter.m */; };
+		183E78FC1DB15DBF00D3D272 /* libOCMock_OCHamcrest.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 183E78DC1DB15D6700D3D272 /* libOCMock_OCHamcrest.a */; };
+		183E79111DB15DD600D3D272 /* Lesson1_SimpleMatchers.m in Sources */ = {isa = PBXBuildFile; fileRef = 183E79021DB15DD600D3D272 /* Lesson1_SimpleMatchers.m */; };
+		183E79121DB15DD600D3D272 /* Lesson2_AdvancedMatcher.m in Sources */ = {isa = PBXBuildFile; fileRef = 183E79031DB15DD600D3D272 /* Lesson2_AdvancedMatcher.m */; };
+		183E79131DB15DD600D3D272 /* Lesson3_Return.m in Sources */ = {isa = PBXBuildFile; fileRef = 183E79041DB15DD600D3D272 /* Lesson3_Return.m */; };
+		183E79141DB15DD600D3D272 /* Lesson4_Block.m in Sources */ = {isa = PBXBuildFile; fileRef = 183E79051DB15DD600D3D272 /* Lesson4_Block.m */; };
+		183E79151DB15DD600D3D272 /* Lesson5_Call.m in Sources */ = {isa = PBXBuildFile; fileRef = 183E79061DB15DD600D3D272 /* Lesson5_Call.m */; };
+		183E79161DB15DD600D3D272 /* Lesson6_Other.m in Sources */ = {isa = PBXBuildFile; fileRef = 183E79071DB15DD600D3D272 /* Lesson6_Other.m */; };
+		183E79171DB15DD600D3D272 /* Lesson7_Partial.m in Sources */ = {isa = PBXBuildFile; fileRef = 183E79081DB15DD600D3D272 /* Lesson7_Partial.m */; };
+		183E79181DB15DD600D3D272 /* Lesson8_Strict.m in Sources */ = {isa = PBXBuildFile; fileRef = 183E79091DB15DD600D3D272 /* Lesson8_Strict.m */; };
+		183E79191DB15DD600D3D272 /* Lesson9_Verify.m in Sources */ = {isa = PBXBuildFile; fileRef = 183E790A1DB15DD600D3D272 /* Lesson9_Verify.m */; };
+		183E791A1DB15DD600D3D272 /* Lesson10_OCHamcrest_Numbers.m in Sources */ = {isa = PBXBuildFile; fileRef = 183E790B1DB15DD600D3D272 /* Lesson10_OCHamcrest_Numbers.m */; };
+		183E791B1DB15DD600D3D272 /* Lesson11_OCHamcrest_Text.m in Sources */ = {isa = PBXBuildFile; fileRef = 183E790C1DB15DD600D3D272 /* Lesson11_OCHamcrest_Text.m */; };
+		183E791C1DB15DD600D3D272 /* Lesson12_OCHamcrest_Container.m in Sources */ = {isa = PBXBuildFile; fileRef = 183E790D1DB15DD600D3D272 /* Lesson12_OCHamcrest_Container.m */; };
+		183E791D1DB15DD600D3D272 /* Lesson13_OCHamcrest_Object.m in Sources */ = {isa = PBXBuildFile; fileRef = 183E790E1DB15DD600D3D272 /* Lesson13_OCHamcrest_Object.m */; };
+		183E791E1DB15DD600D3D272 /* Lesson14_OCHamcrest_Logic.m in Sources */ = {isa = PBXBuildFile; fileRef = 183E790F1DB15DD600D3D272 /* Lesson14_OCHamcrest_Logic.m */; };
+		183E791F1DB15DD600D3D272 /* Lesson15_KNMParametrizedTest.m in Sources */ = {isa = PBXBuildFile; fileRef = 183E79101DB15DD600D3D272 /* Lesson15_KNMParametrizedTest.m */; };
+		CBAA8B7BDBD134D8E75CC8BE /* Pods_OCMock_OCHamcrest_Tests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5CF5EE51EAC3934AB5926AFB /* Pods_OCMock_OCHamcrest_Tests.framework */; };
 /* End PBXBuildFile section */
 
+/* Begin PBXContainerItemProxy section */
+		183E78FD1DB15DBF00D3D272 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 183E78D41DB15D6700D3D272 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 183E78DB1DB15D6700D3D272;
+			remoteInfo = OCMock_OCHamcrest;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXCopyFilesBuildPhase section */
+		183E78DA1DB15D6700D3D272 /* CopyFiles */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "include/$(PRODUCT_NAME)";
+			dstSubfolderSpec = 16;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
+
 /* Begin PBXFileReference section */
-		189702201DA145CE00289DEC /* libOCMock_OCHamcrest.dylib */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.dylib"; includeInIndex = 0; path = libOCMock_OCHamcrest.dylib; sourceTree = BUILT_PRODUCTS_DIR; };
-		189702231DA145CF00289DEC /* OCMock_OCHamcrest.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = OCMock_OCHamcrest.h; sourceTree = "<group>"; };
-		189702251DA145CF00289DEC /* OCMock_OCHamcrest.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = OCMock_OCHamcrest.m; sourceTree = "<group>"; };
+		183E78DC1DB15D6700D3D272 /* libOCMock_OCHamcrest.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libOCMock_OCHamcrest.a; sourceTree = BUILT_PRODUCTS_DIR; };
+		183E78E81DB15D8F00D3D272 /* CustomClass.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CustomClass.h; sourceTree = "<group>"; };
+		183E78E91DB15D8F00D3D272 /* CustomClass.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CustomClass.m; sourceTree = "<group>"; };
+		183E78EA1DB15D8F00D3D272 /* CustomClassProtocol.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CustomClassProtocol.h; sourceTree = "<group>"; };
+		183E78EB1DB15D8F00D3D272 /* Library.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Library.h; sourceTree = "<group>"; };
+		183E78EC1DB15D8F00D3D272 /* Library.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Library.m; sourceTree = "<group>"; };
+		183E78ED1DB15D8F00D3D272 /* ListenerAdapter.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ListenerAdapter.h; sourceTree = "<group>"; };
+		183E78EE1DB15D8F00D3D272 /* ListenerAdapter.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ListenerAdapter.m; sourceTree = "<group>"; };
+		183E78EF1DB15D8F00D3D272 /* ListenerProtocol.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ListenerProtocol.h; sourceTree = "<group>"; };
+		183E78F71DB15DBF00D3D272 /* OCMock_OCHamcrest_Tests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = OCMock_OCHamcrest_Tests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		183E78FB1DB15DBF00D3D272 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		183E79021DB15DD600D3D272 /* Lesson1_SimpleMatchers.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Lesson1_SimpleMatchers.m; sourceTree = "<group>"; };
+		183E79031DB15DD600D3D272 /* Lesson2_AdvancedMatcher.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Lesson2_AdvancedMatcher.m; sourceTree = "<group>"; };
+		183E79041DB15DD600D3D272 /* Lesson3_Return.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Lesson3_Return.m; sourceTree = "<group>"; };
+		183E79051DB15DD600D3D272 /* Lesson4_Block.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Lesson4_Block.m; sourceTree = "<group>"; };
+		183E79061DB15DD600D3D272 /* Lesson5_Call.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Lesson5_Call.m; sourceTree = "<group>"; };
+		183E79071DB15DD600D3D272 /* Lesson6_Other.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Lesson6_Other.m; sourceTree = "<group>"; };
+		183E79081DB15DD600D3D272 /* Lesson7_Partial.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Lesson7_Partial.m; sourceTree = "<group>"; };
+		183E79091DB15DD600D3D272 /* Lesson8_Strict.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Lesson8_Strict.m; sourceTree = "<group>"; };
+		183E790A1DB15DD600D3D272 /* Lesson9_Verify.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Lesson9_Verify.m; sourceTree = "<group>"; };
+		183E790B1DB15DD600D3D272 /* Lesson10_OCHamcrest_Numbers.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Lesson10_OCHamcrest_Numbers.m; sourceTree = "<group>"; };
+		183E790C1DB15DD600D3D272 /* Lesson11_OCHamcrest_Text.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Lesson11_OCHamcrest_Text.m; sourceTree = "<group>"; };
+		183E790D1DB15DD600D3D272 /* Lesson12_OCHamcrest_Container.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Lesson12_OCHamcrest_Container.m; sourceTree = "<group>"; };
+		183E790E1DB15DD600D3D272 /* Lesson13_OCHamcrest_Object.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Lesson13_OCHamcrest_Object.m; sourceTree = "<group>"; };
+		183E790F1DB15DD600D3D272 /* Lesson14_OCHamcrest_Logic.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Lesson14_OCHamcrest_Logic.m; sourceTree = "<group>"; };
+		183E79101DB15DD600D3D272 /* Lesson15_KNMParametrizedTest.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Lesson15_KNMParametrizedTest.m; sourceTree = "<group>"; };
+		5CF5EE51EAC3934AB5926AFB /* Pods_OCMock_OCHamcrest_Tests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_OCMock_OCHamcrest_Tests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		9FD3ECAF9A7F5BCEA2D26FE6 /* Pods-OCMock_OCHamcrest_Tests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-OCMock_OCHamcrest_Tests.release.xcconfig"; path = "Pods/Target Support Files/Pods-OCMock_OCHamcrest_Tests/Pods-OCMock_OCHamcrest_Tests.release.xcconfig"; sourceTree = "<group>"; };
+		E143F0DCFB09D419D547D33F /* Pods-OCMock_OCHamcrest_Tests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-OCMock_OCHamcrest_Tests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-OCMock_OCHamcrest_Tests/Pods-OCMock_OCHamcrest_Tests.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
-		1897021D1DA145CE00289DEC /* Frameworks */ = {
+		183E78D91DB15D6700D3D272 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		183E78F41DB15DBF00D3D272 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				183E78FC1DB15DBF00D3D272 /* libOCMock_OCHamcrest.a in Frameworks */,
+				CBAA8B7BDBD134D8E75CC8BE /* Pods_OCMock_OCHamcrest_Tests.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		189702171DA145CE00289DEC = {
+		183E78D31DB15D6700D3D272 = {
 			isa = PBXGroup;
 			children = (
-				189702221DA145CE00289DEC /* OCMock_OCHamcrest */,
-				189702211DA145CE00289DEC /* Products */,
+				183E78DE1DB15D6700D3D272 /* OCMock_OCHamcrest */,
+				183E78F81DB15DBF00D3D272 /* OCMock_OCHamcrest_Tests */,
+				183E78DD1DB15D6700D3D272 /* Products */,
+				F07E38824954E3C7DBFB8FA4 /* Pods */,
+				E5A20A0043D32777E103A371 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
-		189702211DA145CE00289DEC /* Products */ = {
+		183E78DD1DB15D6700D3D272 /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				189702201DA145CE00289DEC /* libOCMock_OCHamcrest.dylib */,
+				183E78DC1DB15D6700D3D272 /* libOCMock_OCHamcrest.a */,
+				183E78F71DB15DBF00D3D272 /* OCMock_OCHamcrest_Tests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
 		};
-		189702221DA145CE00289DEC /* OCMock_OCHamcrest */ = {
+		183E78DE1DB15D6700D3D272 /* OCMock_OCHamcrest */ = {
 			isa = PBXGroup;
 			children = (
-				189702231DA145CF00289DEC /* OCMock_OCHamcrest.h */,
-				189702251DA145CF00289DEC /* OCMock_OCHamcrest.m */,
+				183E78E81DB15D8F00D3D272 /* CustomClass.h */,
+				183E78E91DB15D8F00D3D272 /* CustomClass.m */,
+				183E78EA1DB15D8F00D3D272 /* CustomClassProtocol.h */,
+				183E78EB1DB15D8F00D3D272 /* Library.h */,
+				183E78EC1DB15D8F00D3D272 /* Library.m */,
+				183E78ED1DB15D8F00D3D272 /* ListenerAdapter.h */,
+				183E78EE1DB15D8F00D3D272 /* ListenerAdapter.m */,
+				183E78EF1DB15D8F00D3D272 /* ListenerProtocol.h */,
 			);
 			path = OCMock_OCHamcrest;
 			sourceTree = "<group>";
 		};
+		183E78F81DB15DBF00D3D272 /* OCMock_OCHamcrest_Tests */ = {
+			isa = PBXGroup;
+			children = (
+				183E79021DB15DD600D3D272 /* Lesson1_SimpleMatchers.m */,
+				183E79031DB15DD600D3D272 /* Lesson2_AdvancedMatcher.m */,
+				183E79041DB15DD600D3D272 /* Lesson3_Return.m */,
+				183E79051DB15DD600D3D272 /* Lesson4_Block.m */,
+				183E79061DB15DD600D3D272 /* Lesson5_Call.m */,
+				183E79071DB15DD600D3D272 /* Lesson6_Other.m */,
+				183E79081DB15DD600D3D272 /* Lesson7_Partial.m */,
+				183E79091DB15DD600D3D272 /* Lesson8_Strict.m */,
+				183E790A1DB15DD600D3D272 /* Lesson9_Verify.m */,
+				183E790B1DB15DD600D3D272 /* Lesson10_OCHamcrest_Numbers.m */,
+				183E790C1DB15DD600D3D272 /* Lesson11_OCHamcrest_Text.m */,
+				183E790D1DB15DD600D3D272 /* Lesson12_OCHamcrest_Container.m */,
+				183E790E1DB15DD600D3D272 /* Lesson13_OCHamcrest_Object.m */,
+				183E790F1DB15DD600D3D272 /* Lesson14_OCHamcrest_Logic.m */,
+				183E79101DB15DD600D3D272 /* Lesson15_KNMParametrizedTest.m */,
+				183E78FB1DB15DBF00D3D272 /* Info.plist */,
+			);
+			path = OCMock_OCHamcrest_Tests;
+			sourceTree = "<group>";
+		};
+		E5A20A0043D32777E103A371 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				5CF5EE51EAC3934AB5926AFB /* Pods_OCMock_OCHamcrest_Tests.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		F07E38824954E3C7DBFB8FA4 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				E143F0DCFB09D419D547D33F /* Pods-OCMock_OCHamcrest_Tests.debug.xcconfig */,
+				9FD3ECAF9A7F5BCEA2D26FE6 /* Pods-OCMock_OCHamcrest_Tests.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
-/* Begin PBXHeadersBuildPhase section */
-		1897021E1DA145CE00289DEC /* Headers */ = {
-			isa = PBXHeadersBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				189702241DA145CF00289DEC /* OCMock_OCHamcrest.h in Headers */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-/* End PBXHeadersBuildPhase section */
-
 /* Begin PBXNativeTarget section */
-		1897021F1DA145CE00289DEC /* OCMock_OCHamcrest */ = {
+		183E78DB1DB15D6700D3D272 /* OCMock_OCHamcrest */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 189702291DA145CF00289DEC /* Build configuration list for PBXNativeTarget "OCMock_OCHamcrest" */;
+			buildConfigurationList = 183E78E51DB15D6700D3D272 /* Build configuration list for PBXNativeTarget "OCMock_OCHamcrest" */;
 			buildPhases = (
-				1897021C1DA145CE00289DEC /* Sources */,
-				1897021D1DA145CE00289DEC /* Frameworks */,
-				1897021E1DA145CE00289DEC /* Headers */,
+				183E78D81DB15D6700D3D272 /* Sources */,
+				183E78D91DB15D6700D3D272 /* Frameworks */,
+				183E78DA1DB15D6700D3D272 /* CopyFiles */,
 			);
 			buildRules = (
 			);
@@ -81,53 +195,168 @@
 			);
 			name = OCMock_OCHamcrest;
 			productName = OCMock_OCHamcrest;
-			productReference = 189702201DA145CE00289DEC /* libOCMock_OCHamcrest.dylib */;
-			productType = "com.apple.product-type.library.dynamic";
+			productReference = 183E78DC1DB15D6700D3D272 /* libOCMock_OCHamcrest.a */;
+			productType = "com.apple.product-type.library.static";
+		};
+		183E78F61DB15DBF00D3D272 /* OCMock_OCHamcrest_Tests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 183E78FF1DB15DBF00D3D272 /* Build configuration list for PBXNativeTarget "OCMock_OCHamcrest_Tests" */;
+			buildPhases = (
+				40217A6226556159D16AF59A /* [CP] Check Pods Manifest.lock */,
+				183E78F31DB15DBF00D3D272 /* Sources */,
+				183E78F41DB15DBF00D3D272 /* Frameworks */,
+				183E78F51DB15DBF00D3D272 /* Resources */,
+				18F94BD7FD29D5F76FF7E0AE /* [CP] Embed Pods Frameworks */,
+				411EC648149F44622331CDF2 /* [CP] Copy Pods Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				183E78FE1DB15DBF00D3D272 /* PBXTargetDependency */,
+			);
+			name = OCMock_OCHamcrest_Tests;
+			productName = OCMock_OCHamcrest_Tests;
+			productReference = 183E78F71DB15DBF00D3D272 /* OCMock_OCHamcrest_Tests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
 		};
 /* End PBXNativeTarget section */
 
 /* Begin PBXProject section */
-		189702181DA145CE00289DEC /* Project object */ = {
+		183E78D41DB15D6700D3D272 /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
 				LastUpgradeCheck = 0730;
 				ORGANIZATIONNAME = "Marcin Serwach";
 				TargetAttributes = {
-					1897021F1DA145CE00289DEC = {
+					183E78DB1DB15D6700D3D272 = {
+						CreatedOnToolsVersion = 7.3.1;
+					};
+					183E78F61DB15DBF00D3D272 = {
 						CreatedOnToolsVersion = 7.3.1;
 					};
 				};
 			};
-			buildConfigurationList = 1897021B1DA145CE00289DEC /* Build configuration list for PBXProject "OCMock_OCHamcrest" */;
+			buildConfigurationList = 183E78D71DB15D6700D3D272 /* Build configuration list for PBXProject "OCMock_OCHamcrest" */;
 			compatibilityVersion = "Xcode 3.2";
 			developmentRegion = English;
 			hasScannedForEncodings = 0;
 			knownRegions = (
 				en,
 			);
-			mainGroup = 189702171DA145CE00289DEC;
-			productRefGroup = 189702211DA145CE00289DEC /* Products */;
+			mainGroup = 183E78D31DB15D6700D3D272;
+			productRefGroup = 183E78DD1DB15D6700D3D272 /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				1897021F1DA145CE00289DEC /* OCMock_OCHamcrest */,
+				183E78DB1DB15D6700D3D272 /* OCMock_OCHamcrest */,
+				183E78F61DB15DBF00D3D272 /* OCMock_OCHamcrest_Tests */,
 			);
 		};
 /* End PBXProject section */
 
+/* Begin PBXResourcesBuildPhase section */
+		183E78F51DB15DBF00D3D272 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		18F94BD7FD29D5F76FF7E0AE /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-OCMock_OCHamcrest_Tests/Pods-OCMock_OCHamcrest_Tests-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		40217A6226556159D16AF59A /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [[ $? != 0 ]] ; then\n    cat << EOM\nerror: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\nEOM\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+		411EC648149F44622331CDF2 /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-OCMock_OCHamcrest_Tests/Pods-OCMock_OCHamcrest_Tests-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
 /* Begin PBXSourcesBuildPhase section */
-		1897021C1DA145CE00289DEC /* Sources */ = {
+		183E78D81DB15D6700D3D272 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				189702261DA145CF00289DEC /* OCMock_OCHamcrest.m in Sources */,
+				183E78F21DB15D8F00D3D272 /* ListenerAdapter.m in Sources */,
+				183E78F01DB15D8F00D3D272 /* CustomClass.m in Sources */,
+				183E78F11DB15D8F00D3D272 /* Library.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		183E78F31DB15DBF00D3D272 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				183E791F1DB15DD600D3D272 /* Lesson15_KNMParametrizedTest.m in Sources */,
+				183E79141DB15DD600D3D272 /* Lesson4_Block.m in Sources */,
+				183E791A1DB15DD600D3D272 /* Lesson10_OCHamcrest_Numbers.m in Sources */,
+				183E79111DB15DD600D3D272 /* Lesson1_SimpleMatchers.m in Sources */,
+				183E79131DB15DD600D3D272 /* Lesson3_Return.m in Sources */,
+				183E79181DB15DD600D3D272 /* Lesson8_Strict.m in Sources */,
+				183E791D1DB15DD600D3D272 /* Lesson13_OCHamcrest_Object.m in Sources */,
+				183E79171DB15DD600D3D272 /* Lesson7_Partial.m in Sources */,
+				183E791B1DB15DD600D3D272 /* Lesson11_OCHamcrest_Text.m in Sources */,
+				183E79121DB15DD600D3D272 /* Lesson2_AdvancedMatcher.m in Sources */,
+				183E791E1DB15DD600D3D272 /* Lesson14_OCHamcrest_Logic.m in Sources */,
+				183E79161DB15DD600D3D272 /* Lesson6_Other.m in Sources */,
+				183E79191DB15DD600D3D272 /* Lesson9_Verify.m in Sources */,
+				183E79151DB15DD600D3D272 /* Lesson5_Call.m in Sources */,
+				183E791C1DB15DD600D3D272 /* Lesson12_OCHamcrest_Container.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXSourcesBuildPhase section */
 
+/* Begin PBXTargetDependency section */
+		183E78FE1DB15DBF00D3D272 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 183E78DB1DB15D6700D3D272 /* OCMock_OCHamcrest */;
+			targetProxy = 183E78FD1DB15DBF00D3D272 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
 /* Begin XCBuildConfiguration section */
-		189702271DA145CF00289DEC /* Debug */ = {
+		183E78E31DB15D6700D3D272 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
@@ -145,7 +374,7 @@
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
-				CODE_SIGN_IDENTITY = "-";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				COPY_PHASE_STRIP = NO;
 				DEBUG_INFORMATION_FORMAT = dwarf;
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
@@ -164,14 +393,14 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				MACOSX_DEPLOYMENT_TARGET = 10.11;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.3;
 				MTL_ENABLE_DEBUG_INFO = YES;
 				ONLY_ACTIVE_ARCH = YES;
-				SDKROOT = macosx;
+				SDKROOT = iphoneos;
 			};
 			name = Debug;
 		};
-		189702281DA145CF00289DEC /* Release */ = {
+		183E78E41DB15D6700D3D272 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
@@ -189,7 +418,7 @@
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
-				CODE_SIGN_IDENTITY = "-";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				COPY_PHASE_STRIP = NO;
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
 				ENABLE_NS_ASSERTIONS = NO;
@@ -202,28 +431,49 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				MACOSX_DEPLOYMENT_TARGET = 10.11;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.3;
 				MTL_ENABLE_DEBUG_INFO = NO;
-				SDKROOT = macosx;
+				SDKROOT = iphoneos;
+				VALIDATE_PRODUCT = YES;
 			};
 			name = Release;
 		};
-		1897022A1DA145CF00289DEC /* Debug */ = {
+		183E78E61DB15D6700D3D272 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				DYLIB_COMPATIBILITY_VERSION = 1;
-				DYLIB_CURRENT_VERSION = 1;
-				EXECUTABLE_PREFIX = lib;
+				OTHER_LDFLAGS = "-ObjC";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SKIP_INSTALL = YES;
+			};
+			name = Debug;
+		};
+		183E78E71DB15D6700D3D272 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				OTHER_LDFLAGS = "-ObjC";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SKIP_INSTALL = YES;
+			};
+			name = Release;
+		};
+		183E79001DB15DBF00D3D272 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = E143F0DCFB09D419D547D33F /* Pods-OCMock_OCHamcrest_Tests.debug.xcconfig */;
+			buildSettings = {
+				INFOPLIST_FILE = OCMock_OCHamcrest_Tests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "iblis-ms.OCMock-OCHamcrest-Tests";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 			};
 			name = Debug;
 		};
-		1897022B1DA145CF00289DEC /* Release */ = {
+		183E79011DB15DBF00D3D272 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 9FD3ECAF9A7F5BCEA2D26FE6 /* Pods-OCMock_OCHamcrest_Tests.release.xcconfig */;
 			buildSettings = {
-				DYLIB_COMPATIBILITY_VERSION = 1;
-				DYLIB_CURRENT_VERSION = 1;
-				EXECUTABLE_PREFIX = lib;
+				INFOPLIST_FILE = OCMock_OCHamcrest_Tests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "iblis-ms.OCMock-OCHamcrest-Tests";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 			};
 			name = Release;
@@ -231,24 +481,34 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		1897021B1DA145CE00289DEC /* Build configuration list for PBXProject "OCMock_OCHamcrest" */ = {
+		183E78D71DB15D6700D3D272 /* Build configuration list for PBXProject "OCMock_OCHamcrest" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				189702271DA145CF00289DEC /* Debug */,
-				189702281DA145CF00289DEC /* Release */,
+				183E78E31DB15D6700D3D272 /* Debug */,
+				183E78E41DB15D6700D3D272 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		189702291DA145CF00289DEC /* Build configuration list for PBXNativeTarget "OCMock_OCHamcrest" */ = {
+		183E78E51DB15D6700D3D272 /* Build configuration list for PBXNativeTarget "OCMock_OCHamcrest" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				1897022A1DA145CF00289DEC /* Debug */,
-				1897022B1DA145CF00289DEC /* Release */,
+				183E78E61DB15D6700D3D272 /* Debug */,
+				183E78E71DB15D6700D3D272 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		183E78FF1DB15DBF00D3D272 /* Build configuration list for PBXNativeTarget "OCMock_OCHamcrest_Tests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				183E79001DB15DBF00D3D272 /* Debug */,
+				183E79011DB15DBF00D3D272 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
-	rootObject = 189702181DA145CE00289DEC /* Project object */;
+	rootObject = 183E78D41DB15D6700D3D272 /* Project object */;
 }
