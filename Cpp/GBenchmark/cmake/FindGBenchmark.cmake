@@ -4,34 +4,28 @@
 #
 # Defines the following variables:
 #
-#   GMOCK_FOUND - Found the Google Testing framework
-#   GMOCK_INCLUDE_DIRS - Include directories
-#
-# Also defines the library variables below as normal
-# variables. These contain debug/optimized keywords when
-# a debugging library is found.
-#
-#   GMOCK_BOTH_LIBRARIES - Both libgmock & libgmock-main
-#   GMOCK_LIBRARIES - libgmock
-#   GMOCK_MAIN_LIBRARIES - libgmock-main
+#   GBENCHMARK_FOUND - Found the Google Benchmark framework
+#   GBENCHMARK_INCLUDE_DIRS - Include directories
+#   GBENCHMARK_LIBRARIES - Google Benchmark library
 #
 # Accepts the following variables as input:
 #
-#   GMOCK_ROOT - (as a CMake or environment variable)
+#   GBENCHMARK_ROOT - (as a CMake or environment variable)
 #                The root directory of the gmock install prefix
 #
-#   GMOCK_MSVC_SEARCH - If compiling with MSVC, this variable can be set to
+#   GBENCHMARK_MSVC_SEARCH - If compiling with MSVC, this variable can be set to
 #                       "MD" or "MT" to enable searching a gmock build tree
 #                       (defaults: "MD")
 #
 #-----------------------
 # Example Usage:
 #
-#    find_package(GMock REQUIRED)
-#    include_directories(${GMOCK_INCLUDE_DIRS})
-#
+#    find_package(GBenchmark REQUIRED)
 #    add_executable(foo foo.cc)
-#    target_link_libraries(foo ${GMOCK_BOTH_LIBRARIES})
+#
+#    target_include_directories(foo ${GBENCHMARK_INCLUDE_DIRS})
+#
+#    target_link_libraries(foo ${GBENCHMARK_LIBRARIES})
 #
 #=============================================================================
 # This file is released under the MIT licence:
@@ -118,7 +112,7 @@ find_package_handle_standard_args(GBENCHMARK DEFAULT_MSG GBENCHMARK_LIBRARY GBEN
 
 if(GBENCHMARK_FOUND)
   set(GBENCHMARK_INCLUDE_DIRS ${GBENCHMARK_INCLUDE_DIR})
-  _gbenchmark_append_debugs(GBENCHMARK_LIBRARIES      GBENCHMARK_LIBRARY)
+  _gbenchmark_append_debugs(GBENCHMARK_LIBRARIES GBENCHMARK_LIBRARY)
 endif()
 
 
