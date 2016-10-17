@@ -10,6 +10,9 @@ set(CMAKE_MODULE_PATH ${CMAKE_MODULE_PATH} "${${PROJECT_NAME}_SOURCE_DIR}/../../
 # finds GBenchmark
 find_package(GBenchmark REQUIRED)
 
+# finds thread library
+find_package(Threads REQUIRED)
+
 # Sets source files
 set(SRC "main.cpp")
 
@@ -17,7 +20,7 @@ set(SRC "main.cpp")
 add_executable(${PROJECT_NAME} ${SRC})
 
 # Links the test program with Google Benchmark
-target_link_libraries(${PROJECT_NAME} PRIVATE ${GBENCHMARK_LIBRARIES})
+target_link_libraries(${PROJECT_NAME} PRIVATE ${GBENCHMARK_LIBRARIES} PRIVATE ${CMAKE_THREAD_LIBS_INIT})
 # Links the headers directory of Google Benchmark
 target_include_directories(${PROJECT_NAME} PRIVATE ${GBENCHMARK_INCLUDE_DIRS})
 
