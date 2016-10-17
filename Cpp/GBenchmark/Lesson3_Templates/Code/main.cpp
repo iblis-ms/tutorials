@@ -94,7 +94,7 @@ void Benchmark_add2Types(benchmark::State& aState)
   }
 }
 
-// You can used more templates.
+// You can used variadic number of templates.
 BENCHMARK_TEMPLATE(Benchmark_add2Types, std::vector<int>, std::list<int>)->Range(1<<0, 1<<10);
 // Here is std::list used.
 BENCHMARK_TEMPLATE(Benchmark_add2Types, std::list<int>, std::vector<int>)->Range(1<<0, 1<<10);
@@ -114,6 +114,7 @@ Output of benchmark:
  Benchmark_add2Types<std::list<int>, std::vector<int>>/1024      35452 ns      35452 ns      19743
 -------------------------------------OUTPUT--------------------------------------
 */
+
 
 ////////////////////////////////////////////////////////////////////////////////
 //                                    MAIN                                    //

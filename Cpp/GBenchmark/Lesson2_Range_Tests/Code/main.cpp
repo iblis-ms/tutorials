@@ -229,6 +229,34 @@ BENCHMARK(Benchmark_binomialTheorem)->RangeMultiplier(4)->Ranges({{64, 512}, {1,
 // Apply - requires pointer to method.
 BENCHMARK(Benchmark_binomialTheorem)->Apply(customArguments);
 
+
+////////////////////////////////////////////////////////////////////////////////
+//                          Provide arguments to benchmark                    //
+////////////////////////////////////////////////////////////////////////////////
+
+//! \brief Adds elements to the container.
+//! \param aSize Number of elements.
+//! \param aTxt Text.
+void addString(int aSize, const std::string& aTxt){
+  std::vector<std::string> con;
+  for (int i = 0; i < aSize; ++i)
+  {
+    con.push_back(aTxt);
+  }
+}
+
+void Benchmar_arguments(benchmark::State& aState, int aCoef, const std::string& aTxt){
+  const int size = aState.range(0);
+  while (aState.KeepRunning())
+  {
+    addString(size * aCoef , aTxt);
+  }
+}
+
+// Registers benchmark. The first argument is pointer to the benchmark method. The second is
+// test case name and after that there are arguments values.
+BENCHMARK_CAPTURE(Benchmar_arguments, TestCaseName, 2, std::string("abc"))->Range(1<<0, 1<<10);
+
 ////////////////////////////////////////////////////////////////////////////////
 //                                    MAIN                                    //
 ////////////////////////////////////////////////////////////////////////////////
