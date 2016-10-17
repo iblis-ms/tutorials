@@ -4,9 +4,6 @@
 // adds Google Benchmark header
 #include <benchmark/benchmark.h>
 
-#include <string>
-#include <sstream>
-#include <cstring>
 
 ////////////////////////////////////////////////////////////////////////////////
 
