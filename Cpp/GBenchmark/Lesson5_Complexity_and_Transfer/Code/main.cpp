@@ -24,7 +24,7 @@ long factorial(long aValue)
   return factorial(aValue - 1) * aValue;
 }
 
-//! \brief Benchmark method for 'factorial' method with optimization.
+//! \brief Benchmark method for 'factorial' method.
 void Benchmark_factorial(benchmark::State& aState)
 {
   const int value = aState.range(0);
@@ -86,7 +86,7 @@ int addList(int aSize){
   return list.size();
 }
 
-//! \brief Benchmark method for 'factorial' method with optimization.
+//! \brief Benchmark method for 'factorial' method.
 void Benchmark_addList(benchmark::State& aState)
 {
   const int value = aState.range(0);
