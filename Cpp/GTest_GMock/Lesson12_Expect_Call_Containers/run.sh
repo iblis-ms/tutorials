@@ -1,17 +1,5 @@
 #!/bin/bash
 
-output="Output"
-if [ -d "$output" ]
-then
-  rm -r "$output"
-fi
-mkdir "$output"
-
-cd "$output"
-cmake ../Code
-make
-make test
-cd -
 
 if [ "$1" == "eclipse" ]
 then
@@ -24,4 +12,18 @@ then
   cd "$projectFolder"
   cmake -G"Eclipse CDT4 - Unix Makefiles" -D CMAKE_BUILD_TYPE=Debug -D_ECLIPSE_VERSION=4.2  ../Code
   cd -
+  exit 0
 fi
+
+output="Output"
+if [ -d "$output" ]
+then
+  rm -r "$output"
+fi
+mkdir "$output"
+
+cd "$output"
+cmake ../Code
+make
+make test
+cd -

@@ -7,7 +7,8 @@ After this lesson you will know how to:
 
 #Used methods, macros & objects
 - ON_CALL
-
+- NiceMock
+- StrictMock
 
 *Author: Marcin Serwach*
 *Tutorial: [https://github.com/iblis-ms/tutorials/tree/master/Cpp/GTest_GMock](https://github.com/iblis-ms/tutorials/tree/master/Cpp/GTest_GMock)*
