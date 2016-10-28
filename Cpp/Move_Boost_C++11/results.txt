@@ -1,0 +1,117 @@
+Benchmark                                                     Time           CPU Iterations
+-------------------------------------------------------------------------------------------
+Boost_Benchmark_copy/1                                      259 ns        258 ns    2569605
+Boost_Benchmark_copy/2                                      282 ns        282 ns    2517600
+Boost_Benchmark_copy/4                                      494 ns        493 ns    1461807
+Boost_Benchmark_copy/8                                      573 ns        573 ns    1139911
+Boost_Benchmark_copy/16                                     676 ns        676 ns    1025516
+Boost_Benchmark_copy/32                                     855 ns        855 ns     809994
+Boost_Benchmark_copy/64                                    1783 ns       1783 ns     393799
+Boost_Benchmark_copy/128                                   3117 ns       3116 ns     227035
+Boost_Benchmark_copy/256                                   5828 ns       5828 ns     113557
+Boost_Benchmark_copy/512                                  17301 ns      17300 ns      39195
+Boost_Benchmark_copy/1024                                 34909 ns      34907 ns      20136
+Boost_Benchmark_copy/2k                                   69413 ns      69409 ns       9596
+Boost_Benchmark_copy/4k                                  173614 ns     173605 ns       4081
+Boost_Benchmark_copy/8k                                  787464 ns     787432 ns        821
+Boost_Benchmark_copy/16k                                1893790 ns    1893660 ns        375
+Boost_Benchmark_copy/32k                                3884641 ns    3884477 ns        184
+Boost_Benchmark_copy_BigO                                  7.90 NlgN       7.90 NlgN 
+Boost_Benchmark_copy_RMS                                     15 %         15 % 
+Boost_Benchmark_rvalueConstructor/1                         360 ns        363 ns    1912983
+Boost_Benchmark_rvalueConstructor/2                         360 ns        363 ns    1927507
+Boost_Benchmark_rvalueConstructor/4                         380 ns        382 ns    1833327
+Boost_Benchmark_rvalueConstructor/8                         379 ns        381 ns    1837950
+Boost_Benchmark_rvalueConstructor/16                        463 ns        465 ns    1511326
+Boost_Benchmark_rvalueConstructor/32                        376 ns        378 ns    1852207
+Boost_Benchmark_rvalueConstructor/64                        392 ns        387 ns    1811234
+Boost_Benchmark_rvalueConstructor/128                       445 ns        415 ns    1702408
+Boost_Benchmark_rvalueConstructor/256                       479 ns        443 ns    1673329
+Boost_Benchmark_rvalueConstructor/512                       594 ns        506 ns    1000000
+Boost_Benchmark_rvalueConstructor/1024                      669 ns        549 ns    1217581
+Boost_Benchmark_rvalueConstructor/2k                        772 ns        620 ns    1359965
+Boost_Benchmark_rvalueConstructor/4k                        900 ns        712 ns    1063400
+Boost_Benchmark_rvalueConstructor/8k                       1480 ns       1119 ns     742803
+Boost_Benchmark_rvalueConstructor/16k                      4932 ns       3557 ns     184274
+Boost_Benchmark_rvalueConstructor/32k                      6373 ns       4644 ns     138722
+Boost_Benchmark_rvalueConstructor_BigO                     0.22 N       0.16 N 
+Boost_Benchmark_rvalueConstructor_RMS                        44 %         46 % 
+Boost_Benchmark_rvalueConstructorInitialization/1           270 ns        270 ns    2640206
+Boost_Benchmark_rvalueConstructorInitialization/2           339 ns        339 ns    2051040
+Boost_Benchmark_rvalueConstructorInitialization/4           470 ns        470 ns    1487122
+Boost_Benchmark_rvalueConstructorInitialization/8           509 ns        507 ns    1322308
+Boost_Benchmark_rvalueConstructorInitialization/16          732 ns        729 ns    1018214
+Boost_Benchmark_rvalueConstructorInitialization/32          909 ns        909 ns     762853
+Boost_Benchmark_rvalueConstructorInitialization/64         1364 ns       1363 ns     512619
+Boost_Benchmark_rvalueConstructorInitialization/128        2917 ns       2917 ns     236153
+Boost_Benchmark_rvalueConstructorInitialization/256        5072 ns       5017 ns     136487
+Boost_Benchmark_rvalueConstructorInitialization/512        9304 ns       9303 ns      68829
+Boost_Benchmark_rvalueConstructorInitialization/1024      25402 ns      25255 ns      27513
+Boost_Benchmark_rvalueConstructorInitialization/2k        51259 ns      51056 ns      10097
+Boost_Benchmark_rvalueConstructorInitialization/4k       102806 ns     102648 ns       6743
+Boost_Benchmark_rvalueConstructorInitialization/8k       306547 ns     306528 ns       2334
+Boost_Benchmark_rvalueConstructorInitialization/16k     1391959 ns    1391883 ns        491
+Boost_Benchmark_rvalueConstructorInitialization/32k     3159071 ns    3158932 ns        220
+Boost_Benchmark_rvalueConstructorInitialization_BigO       6.19 NlgN       6.19 NlgN 
+Boost_Benchmark_rvalueConstructorInitialization_RMS          34 %         34 % 
+Run on (4 X 2600 MHz CPU s)
+2016-10-27 21:27:25
+***WARNING*** CPU scaling is enabled, the benchmark real time measurements may be noisy and will incur extra overhead.
+Benchmark                                                     Time           CPU Iterations
+-------------------------------------------------------------------------------------------
+Cpp11_Benchmark_copy/1                                      275 ns        272 ns    2597472
+Cpp11_Benchmark_copy/2                                      302 ns        301 ns    2356189
+Cpp11_Benchmark_copy/4                                      487 ns        480 ns    1452628
+Cpp11_Benchmark_copy/8                                      544 ns        540 ns    1298602
+Cpp11_Benchmark_copy/16                                     696 ns        693 ns    1022251
+Cpp11_Benchmark_copy/32                                     918 ns        918 ns     713661
+Cpp11_Benchmark_copy/64                                    1800 ns       1792 ns     384202
+Cpp11_Benchmark_copy/128                                   3263 ns       3250 ns     215116
+Cpp11_Benchmark_copy/256                                   6608 ns       6608 ns      99413
+Cpp11_Benchmark_copy/512                                  19365 ns      19365 ns      35101
+Cpp11_Benchmark_copy/1024                                 39491 ns      39486 ns      17498
+Cpp11_Benchmark_copy/2k                                   80414 ns      80410 ns       8569
+Cpp11_Benchmark_copy/4k                                  224868 ns     224855 ns       3136
+Cpp11_Benchmark_copy/8k                                 1142943 ns    1142888 ns        653
+Cpp11_Benchmark_copy/16k                                2467042 ns    2466927 ns        283
+Cpp11_Benchmark_copy/32k                                4920340 ns    4919158 ns        126
+Cpp11_Benchmark_copy_BigO                                 10.11 NlgN      10.11 NlgN 
+Cpp11_Benchmark_copy_RMS                                     16 %         16 % 
+Cpp11_Benchmark_rvalueConstructor/1                         370 ns        372 ns    1887016
+Cpp11_Benchmark_rvalueConstructor/2                         370 ns        372 ns    1883962
+Cpp11_Benchmark_rvalueConstructor/4                         391 ns        393 ns    1781725
+Cpp11_Benchmark_rvalueConstructor/8                         388 ns        390 ns    1819342
+Cpp11_Benchmark_rvalueConstructor/16                        452 ns        450 ns    1543313
+Cpp11_Benchmark_rvalueConstructor/32                        389 ns        391 ns    1796810
+Cpp11_Benchmark_rvalueConstructor/64                        417 ns        412 ns    1694354
+Cpp11_Benchmark_rvalueConstructor/128                       459 ns        429 ns    1629902
+Cpp11_Benchmark_rvalueConstructor/256                       467 ns        437 ns    1583567
+Cpp11_Benchmark_rvalueConstructor/512                       592 ns        526 ns    1326516
+Cpp11_Benchmark_rvalueConstructor/1024                      711 ns        595 ns    1182668
+Cpp11_Benchmark_rvalueConstructor/2k                        721 ns        590 ns    1186317
+Cpp11_Benchmark_rvalueConstructor/4k                        914 ns        687 ns    1058361
+Cpp11_Benchmark_rvalueConstructor/8k                       1245 ns        923 ns     779746
+Cpp11_Benchmark_rvalueConstructor/16k                      3818 ns       2744 ns     256966
+Cpp11_Benchmark_rvalueConstructor/32k                      6954 ns       5080 ns     179344
+Cpp11_Benchmark_rvalueConstructor_BigO                     0.21 N       0.16 N 
+Cpp11_Benchmark_rvalueConstructor_RMS                        33 %         39 % 
+Cpp11_Benchmark_rvalueConstructorInitialization/1           281 ns        281 ns    2466863
+Cpp11_Benchmark_rvalueConstructorInitialization/2           337 ns        337 ns    2081064
+Cpp11_Benchmark_rvalueConstructorInitialization/4           493 ns        493 ns    1451673
+Cpp11_Benchmark_rvalueConstructorInitialization/8           538 ns        538 ns    1300177
+Cpp11_Benchmark_rvalueConstructorInitialization/16          687 ns        687 ns     936247
+Cpp11_Benchmark_rvalueConstructorInitialization/32          917 ns        917 ns     787957
+Cpp11_Benchmark_rvalueConstructorInitialization/64         1482 ns       1482 ns     456033
+Cpp11_Benchmark_rvalueConstructorInitialization/128        3243 ns       3243 ns     215233
+Cpp11_Benchmark_rvalueConstructorInitialization/256        5029 ns       5029 ns     130612
+Cpp11_Benchmark_rvalueConstructorInitialization/512       10710 ns      10710 ns      62683
+Cpp11_Benchmark_rvalueConstructorInitialization/1024      25310 ns      25309 ns      27158
+Cpp11_Benchmark_rvalueConstructorInitialization/2k        51797 ns      51787 ns      12002
+Cpp11_Benchmark_rvalueConstructorInitialization/4k       106670 ns     106666 ns       6179
+Cpp11_Benchmark_rvalueConstructorInitialization/8k       353545 ns     353495 ns       1996
+Cpp11_Benchmark_rvalueConstructorInitialization/16k     1521652 ns    1521602 ns        401
+Cpp11_Benchmark_rvalueConstructorInitialization/32k     3277478 ns    3277336 ns        208
+Cpp11_Benchmark_rvalueConstructorInitialization_BigO       6.49 NlgN       6.49 NlgN 
+Cpp11_Benchmark_rvalueConstructorInitialization_RMS          32 %         32 % 
+/home/iblis/workspaces/tutorials/Cpp/Move_Boost_C++11
+iblis@iblis-Aspire-V3-572G:~/workspaces/tutorials/Cpp/M
