@@ -63,7 +63,7 @@ Benchmark_rvalueConstructor & Cpp11_Benchmark_rvalueConstructor is passing objec
 Benchmark_rvalueConstructorInitialization & Benchmark_rvalueConstructorInitialization means passing by R-value reference temporary objects. Time of creation temporary objects is included.
 
 |Benchmark                                             |        Time   |        CPU   |  Iterations  |
-|-----------------------------------------------------:|:-------------:|:------------:|:------------:|
+|:-----------------------------------------------------|:-------------:|:------------:|:------------:|
 |Boost_Benchmark_copy/1                                |      602 ns   |    1199 ns   |   515274     |
 |Boost_Benchmark_copy/2                                |      582 ns   |    1163 ns   |   509417     |
 |Boost_Benchmark_copy/4                                |      549 ns   |     597 ns   |  5988020     |
