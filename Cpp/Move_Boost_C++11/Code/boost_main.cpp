@@ -1,3 +1,6 @@
+// Author: Marcin Serwach
+// Tutorial: https://github.com/iblis-ms/tutorials/tree/master/Cpp/Move_Boost_C++11
+
 #include <iostream>
 #include <benchmark/benchmark.h>
 #include <boost/move/move.hpp>
@@ -247,7 +250,7 @@ private:
   int* iDerivativeField1;
 };
 
-////////////////////////////////////////////////////////////////////////////////
+/////////////////////////// PASSING BY REFERENCE - COPY CONTENT ////////////////////////////////////////////////
 boost::shared_ptr<Derivative> copy(Derivative& aItem)
 {
   return boost::shared_ptr<Derivative>(new Derivative(aItem));
@@ -266,7 +269,8 @@ void Boost_Benchmark_copy(benchmark::State& aState)
 }
 
 BENCHMARK(Boost_Benchmark_copy)->RangeMultiplier(kRangeMultiplier)->Range(kRangeMin, kRangeMax)->Complexity();
-///
+
+/////////////////////////// PASSING BY MOVE - "MOVE" CONTENT ///////////////////////////////////////////////////
 boost::shared_ptr<Derivative> rvalueConstructor(Derivative& aItem)
 {
   return boost::shared_ptr<Derivative>(new Derivative(boost::move(aItem)));
@@ -287,7 +291,8 @@ void Boost_Benchmark_rvalueConstructor(benchmark::State& aState)
 }
 
 BENCHMARK(Boost_Benchmark_rvalueConstructor)->RangeMultiplier(kRangeMultiplier)->Range(kRangeMin, kRangeMax)->Complexity();
-////
+
+/////////////////////////// PASSING BY MOVE - "MOVE" CONTENT ///////////////////////////////////////////////////
 boost::shared_ptr<Derivative> rvalueConstructor(int aSize)
 {
   return boost::shared_ptr<Derivative>(new Derivative(Derivative(aSize)));
@@ -306,11 +311,6 @@ void Boost_Benchmark_rvalueConstructorInitialization(benchmark::State& aState)
 
 BENCHMARK(Boost_Benchmark_rvalueConstructorInitialization)->RangeMultiplier(kRangeMultiplier)->Range(kRangeMin, kRangeMax)->Complexity();
 
-////////////////////////////////////////////////////////////////////////////////
-//                                    MAIN                                    //
-////////////////////////////////////////////////////////////////////////////////
 
-// Google Benchmark has a special macro that creates main method.
-BENCHMARK_MAIN()
-;
-
+/////////////////////////// MAIN ///////////////////////////////////////////////////////////////////////////////
+BENCHMARK_MAIN();

@@ -49,4 +49,4 @@ target_include_directories(${CPP11_NAME} PRIVATE ${GBENCHMARK_INCLUDE_DIRS})
 set_property(TARGET ${CPP11_NAME} PROPERTY CXX_STANDARD 11)
 
 # Author: Marcin Serwach
-# Tutorial: https://github.com/iblis-ms/tutorials/tree/master/Cpp/GBenchmark
+# Tutorial: https://github.com/iblis-ms/tutorials/tree/master/Cpp/Move_Boost_C++11

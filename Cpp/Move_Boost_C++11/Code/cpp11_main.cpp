@@ -1,4 +1,6 @@
-#include <iostream>
+// Author: Marcin Serwach
+// Tutorial: https://github.com/iblis-ms/tutorials/tree/master/Cpp/Move_Boost_C++11
+
 #include <vector>
 #include <benchmark/benchmark.h>
 #include <memory>
@@ -243,7 +245,7 @@ private:
   int* iDerivativeField;
 };
 
-////////////////////////////////////////////////////////////////////////////////
+/////////////////////////// PASSING BY REFERENCE - COPY CONTENT ////////////////////////////////////////////////
 std::shared_ptr<Derivative> copy(Derivative& aItem)
 {
   return std::shared_ptr<Derivative>(new Derivative(aItem));
@@ -262,7 +264,8 @@ void Cpp11_Benchmark_copy(benchmark::State& aState)
 }
 
 BENCHMARK(Cpp11_Benchmark_copy)->RangeMultiplier(kRangeMultiplier)->Range(kRangeMin, kRangeMax)->Complexity();
-///
+
+/////////////////////////// PASSING BY MOVE - "MOVE" CONTENT ///////////////////////////////////////////////////
 std::shared_ptr<Derivative> rvalueConstructor(Derivative& aItem)
 {
   return std::shared_ptr<Derivative>(new Derivative(std::move(aItem)));
@@ -283,7 +286,8 @@ void Cpp11_Benchmark_rvalueConstructor(benchmark::State& aState)
 }
 
 BENCHMARK(Cpp11_Benchmark_rvalueConstructor)->RangeMultiplier(kRangeMultiplier)->Range(kRangeMin, kRangeMax)->Complexity();
-////
+
+/////////////////////////// PASSING BY MOVE - "MOVE" CONTENT OF TEMPORARY OBJECT ///////////////////////////////
 std::shared_ptr<Derivative> rvalueConstructor(int aSize)
 {
   return std::shared_ptr<Derivative>(new Derivative(Derivative(aSize)));
@@ -302,9 +306,5 @@ void Cpp11_Benchmark_rvalueConstructorInitialization(benchmark::State& aState)
 
 BENCHMARK(Cpp11_Benchmark_rvalueConstructorInitialization)->RangeMultiplier(kRangeMultiplier)->Range(kRangeMin, kRangeMax)->Complexity();
 
-////////////////////////////////////////////////////////////////////////////////
-//                                    MAIN                                    //
-////////////////////////////////////////////////////////////////////////////////
-
-// Google Benchmark has a special macro that creates main method.
+/////////////////////////// MAIN ///////////////////////////////////////////////////////////////////////////////
 BENCHMARK_MAIN();
