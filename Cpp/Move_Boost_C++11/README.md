@@ -62,12 +62,8 @@ Benchmark_rvalueConstructor & Cpp11_Benchmark_rvalueConstructor is passing objec
 
 Benchmark_rvalueConstructorInitialization & Benchmark_rvalueConstructorInitialization means passing by R-value reference temporary objects. Time of creation temporary objects is included.
 
-|:----------------------------------------------------:|:-------------:|:------------:|:------------:|
-|Run on (8 X 1000 MHz CPU s)                           |               |              |              |
-|2016-10-29 00:01:14                                   |               |              |              |
-|:----------------------------------------------------:|:-------------:|:------------:|:------------:|
 |Benchmark                                             |        Time   |        CPU   |  Iterations  |
-|:----------------------------------------------------:|:-------------:|:------------:|:------------:|
+|-----------------------------------------------------:|:-------------:|:------------:|:------------:|
 |Boost_Benchmark_copy/1                                |      602 ns   |    1199 ns   |   515274     |
 |Boost_Benchmark_copy/2                                |      582 ns   |    1163 ns   |   509417     |
 |Boost_Benchmark_copy/4                                |      549 ns   |     597 ns   |  5988020     |
@@ -84,10 +80,8 @@ Benchmark_rvalueConstructorInitialization & Benchmark_rvalueConstructorInitializ
 |Boost_Benchmark_copy/8k                               |   225966 ns   |  250130 ns   |    10000     |
 |Boost_Benchmark_copy/16k                              |  1316724 ns   | 1704721 ns   |      383     |
 |Boost_Benchmark_copy/32k                              |  3070288 ns   | 3742550 ns   |     1000     |
-|:----------------------------------------------------:|:-------------:|:------------:|:------------:|
 |Boost_Benchmark_copy_BigO                             |   5.97 NlgN   |  7.36 NlgN   |              |
 |Boost_Benchmark_copy_RMS                              |        40 %   |       38 %   |              |
-|:----------------------------------------------------:|:-------------:|:------------:|:------------:|
 |Boost_Benchmark_rvalueConstructor/1                   |     1305 ns   |    2183 ns   |  1000000     |
 |Boost_Benchmark_rvalueConstructor/2                   |     1338 ns   |    1216 ns   |   579902     |
 |Boost_Benchmark_rvalueConstructor/4                   |     1276 ns   |    1118 ns   |   599510     |
@@ -104,10 +98,8 @@ Benchmark_rvalueConstructorInitialization & Benchmark_rvalueConstructorInitializ
 |Boost_Benchmark_rvalueConstructor/8k                  |     2225 ns   |    1771 ns   |   385382     |
 |Boost_Benchmark_rvalueConstructor/16k                 |   271488 ns   |  303789 ns   |    10000     |
 |Boost_Benchmark_rvalueConstructor/32k                 |   611182 ns   | 1005392 ns   |     1000     |
-|:----------------------------------------------------:|:-------------:|:------------:|:------------:|
 |Boost_Benchmark_rvalueConstructor_BigO                |    0.00 N^2   |   0.00 N^2   |              |
 |Boost_Benchmark_rvalueConstructor_RMS                 |        54 %   |       24 %   |              |
-|:----------------------------------------------------:|:-------------:|:------------:|:------------:|
 |Boost_Benchmark_rvalueConstructorInitialization/1     |      584 ns   |    1167 ns   |   605505     |
 |Boost_Benchmark_rvalueConstructorInitialization/2     |      573 ns   |     620 ns   |  5711120     |
 |Boost_Benchmark_rvalueConstructorInitialization/4     |      558 ns   |    1115 ns   |   583761     |
@@ -124,15 +116,8 @@ Benchmark_rvalueConstructorInitialization & Benchmark_rvalueConstructorInitializ
 |Boost_Benchmark_rvalueConstructorInitialization/8k    |   128841 ns   |  257094 ns   |     2518     |
 |Boost_Benchmark_rvalueConstructorInitialization/16k   |  1018181 ns   | 1166555 ns   |      548     |
 |Boost_Benchmark_rvalueConstructorInitialization/32k   |  2275822 ns   | 6496996 ns   |      255     |
-|:----------------------------------------------------:|:-------------:|:------------:|:------------:|
 |Boost_Benchmark_rvalueConstructorInitialization_BigO  |    0.00 N^3   |   0.00 N^3   |              | 
 |Boost_Benchmark_rvalueConstructorInitialization_RMS   |        83 %   |       19 %   |              |
-|:----------------------------------------------------:|:-------------:|:------------:|:------------:|
-|Run on (8 X 1000 MHz CPU s)                           |               |              |              |
-|2016-10-29 00:05:40                                   |               |              |              |
-|:----------------------------------------------------:|:-------------:|:------------:|:------------:|
-|Benchmark                                             |        Time   |        CPU   |  Iterations  |
-|:----------------------------------------------------:|:-------------:|:------------:|:------------:|
 |Cpp11_Benchmark_copy/1                                |      594 ns   |     1175 ns  |   563317     |
 |Cpp11_Benchmark_copy/2                                |      574 ns   |    1148 ns   |   538959     |
 |Cpp11_Benchmark_copy/4                                |      558 ns   |     599 ns   |  5816270     |
@@ -149,10 +134,8 @@ Benchmark_rvalueConstructorInitialization & Benchmark_rvalueConstructorInitializ
 |Cpp11_Benchmark_copy/8k                               |   295315 ns   |  569838 ns   |     1309     |
 |Cpp11_Benchmark_copy/16k                              |  1415012 ns   | 1821892 ns   |     1000     |
 |Cpp11_Benchmark_copy/32k                              |  4014000 ns   |10742490 ns   |      155     |
-|:----------------------------------------------------:|:-------------:|:------------:|:------------:|
 |Cpp11_Benchmark_copy_BigO                             |    0.00 N^3   |   0.00 N^3   |              |
 |Cpp11_Benchmark_copy_RMS                              |        63 %   |       19 %   |              |
-|:----------------------------------------------------:|:-------------:|:------------:|:------------:|
 |Cpp11_Benchmark_rvalueConstructor/1                   |     1459 ns   |    1301 ns   |   541486     |
 |Cpp11_Benchmark_rvalueConstructor/2                   |     1437 ns   |    3137 ns   |   537280     |
 |Cpp11_Benchmark_rvalueConstructor/4                   |     1384 ns   |    1190 ns   |   542350     |
@@ -169,10 +152,8 @@ Benchmark_rvalueConstructorInitialization & Benchmark_rvalueConstructorInitializ
 |Cpp11_Benchmark_rvalueConstructor/8k                  |     2377 ns   |    2624 ns   |  3760610     |
 |Cpp11_Benchmark_rvalueConstructor/16k                 |   271599 ns   |  403892 ns   |    10000     |
 |Cpp11_Benchmark_rvalueConstructor/32k                 |   620094 ns   | 1005520 ns   |     1000     |
-|:----------------------------------------------------:|:-------------:|:------------:|:------------:|
 |Cpp11_Benchmark_rvalueConstructor_BigO                |    0.00 N^2   |   0.00 N^2   |              |
 |Cpp11_Benchmark_rvalueConstructor_RMS                 |        52 %   |       45 %   |              |
-|:----------------------------------------------------:|:-------------:|:------------:|:------------:|
 |Cpp11_Benchmark_rvalueConstructorInitialization/1     |      570 ns   |     632 ns   |  5920760     |
 |Cpp11_Benchmark_rvalueConstructorInitialization/2     |      595 ns   |    1189 ns   |   550133     |
 |Cpp11_Benchmark_rvalueConstructorInitialization/4     |      553 ns   |     615 ns   |  6105650     |
@@ -189,10 +170,8 @@ Benchmark_rvalueConstructorInitialization & Benchmark_rvalueConstructorInitializ
 |Cpp11_Benchmark_rvalueConstructorInitialization/8k    |   130235 ns   |  141029 ns   |    25260     |
 |Cpp11_Benchmark_rvalueConstructorInitialization/16k   |  1009030 ns   | 1152429 ns   |      564     |
 |Cpp11_Benchmark_rvalueConstructorInitialization/32k   |  2282993 ns   | 2600690 ns   |     2600     |
-|:----------------------------------------------------:|:-------------:|:------------:|:------------:|
 |Cpp11_Benchmark_rvalueConstructorInitialization_BigO  |   4.44 NlgN   |  5.07 NlgN   |              |
 |Cpp11_Benchmark_rvalueConstructorInitialization_RMS   |        44 %   |       42 %   |              |
-|:----------------------------------------------------:|:-------------:|:------------:|:------------:|
 
 ##Discussion
 There is huge difference between passing object by R-value reference and L-value reference. For small object passing L-value reference is a little faster. To the specific size of object passing by R-value has almost constant time. After that caching is not so efficient. Creating temporary object and passing it by R-value reference is also faster than passing by L-value reference.
