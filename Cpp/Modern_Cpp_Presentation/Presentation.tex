@@ -1,0 +1,1222 @@
+\documentclass{beamer}
+
+
+
+\usepackage[utf8]{inputenc} 
+\usepackage[T1]{fontenc}
+\usepackage[frenchb]{babel}
+\usepackage{setspace}
+\usepackage{color}
+\usepackage{listings}
+
+\usetheme{Warsaw}
+\title{Modern C++}
+
+\author{Marcin Serwach}
+%\institute{Personal}
+\date{Łódź, 8.12.2016}
+
+
+\lstdefinestyle{customcpp}{
+  belowcaptionskip=1\baselineskip,
+  breaklines=true,
+  xleftmargin=\parindent,
+  language=C++,
+  showstringspaces=false,
+  basicstyle=\footnotesize\ttfamily,
+  keywordstyle=\bfseries\color{blue},
+  commentstyle=\itshape\color{green!40!black},
+  identifierstyle=\color{black},
+  stringstyle=\color{red},
+   numbers=left,                   
+  numbersep=5pt,                   
+  numberstyle=\tiny\color{gray},
+  keepspaces=true, 
+}
+
+\begin{document}
+\lstset{language=C++}
+
+\maketitle
+
+\begin{frame}{C++11}
+\uncover<1->{
+\begin{itemize}
+\item Move semantic
+\item Lambda
+\item Automatic type deduction
+\item Variadic templates
+\item Enum class
+\item Suffix
+\item Const expression
+\item initializer\_list
+\item Attributes: \textit{final}, \textit{override}, \textit{default}, \textit{delete}
+\item Foreach
+\item Attribute noexcept
+\item Brackets: \{\}
+\item Calling constructor from constructor
+\item nullptr
+\end{itemize}
+}
+\end{frame}
+
+\begin{frame}{C++11 STL}
+\uncover<1->{
+\begin{itemize}
+\item Thread
+\item Smart pointers
+\item Chrono
+\item Random engines/distrubution
+\item Type traits
+\item Regex
+\item std::array
+\item Tuple
+\item System errors
+\item Ratio
+\item \textit{std::bind}, \textit{std::function}
+\end{itemize}
+}
+\end{frame}
+
+
+\begin{frame}[fragile]{Move semantic}
+\begin{center}
+{\Huge \textbf{Move semantic}}
+\end{center}
+\end{frame}
+
+\begin{frame}[fragile] {R-value and L-value reference}
+%\uncover<1->{
+\textbf{L-value reference}\\
+Alias name of object. \\
+\begin{lstlisting}[style=customcpp]
+Class obj;
+Class& lref = obj;
+\end{lstlisting}
+
+\textbf{R-value reference}\\
+Reference to a temporary object, that will be destroyed in near future. \\
+\begin{lstlisting}[style=customcpp]
+Class obj1, obj2;
+Class&& rref1 = Class{}; // r-value as returned valued
+Class&& rref2 = obj1 + obj2; // as above
+Class&& rref3 = std::move(obj1); // calling std::move
+void fun(Class&& aArg); // r-value as an argument of a method
+/* ... */
+fun(Class{}); // creating temporary object
+\end{lstlisting}
+
+%}
+
+\end{frame}
+
+
+
+\begin{frame}[fragile] {R/L-value reference and function overloading}
+\begin{lstlisting}[style=customcpp]
+void fun(Class& aArg){
+	std::cout<<"L-value\n";
+}
+void fun(Class&& aArg){
+	std::cout<<"R-value\n";
+}
+int main() {
+	Class a;
+	fun(a); // Output: L-value
+	fun(Class{}); // Output: R-value
+	return 0;
+}
+\end{lstlisting}
+
+\end{frame}
+
+
+\begin{frame}[fragile] {Universal reference}
+\textbf{Universal reference}\\
+\textbf{Only} for templates. Notation the same as R-value reference.
+\begin{lstlisting}[style=customcpp]
+template<typename T>
+void fun(T&& aArg){
+}
+\end{lstlisting}
+The \textit{fun} allows passing L-value and R-value reference.
+\end{frame}
+
+\begin{frame}[fragile] {Universal reference}
+\begin{lstlisting}[style=customcpp]
+template<typename T>
+void fun(T&& aArg){
+	std::cout<<"fun\n";
+}
+
+int main() {
+	int a = 2, b = 1;
+	int& lvalue = a;
+	int&& rvalue = std::move(b);
+	fun(lvalue);
+	fun(rvalue);
+	return 0;
+}
+
+\end{lstlisting}
+\end{frame}
+
+
+\begin{frame}[fragile] {\textit{std::move} and \textit{std::forward}}
+\begin{lstlisting}[style=customcpp]
+int a = 2;
+int&& rvalue1 = std::move(a);
+\end{lstlisting}
+The \textit{std::move} \textbf{doesn't} move anything. It is a \textbf{unconditional} cast to r-value reference. Moved object cannot be used. \\
+\begin{lstlisting}[style=customcpp]
+template<typename T>
+void fun(T&& aArg){
+	anotherFun(std::forward<T>(aArg));
+}
+\end{lstlisting}
+The \textit{std::forward} \textbf{doesn't} forward/move anything. It is a \textbf{conditional} cast to r-value reference. If a given argument of \textit{forward} is r-value, it casts to r-value. Otherwise \textit{forward} casts to l-value reference.
+
+\end{frame}
+
+\begin{frame}[fragile] {\textit{std::forward} - example without \textit{std::forward}}
+\begin{lstlisting}[style=customcpp]
+void anotherFun(Class& aArg){
+	std::cout<<"L-value\n";
+}
+void anotherFun(Class&& aArg){
+	std::cout<<"R-value\n";
+}
+template<typename T>
+void fun(T&& aArg){
+	anotherFun(aArg);
+}
+// ...
+Class obj1;
+fun(obj1); // Output: L-value
+fun(Class{}); // Output: L-value
+\end{lstlisting}
+\end{frame}
+
+
+\begin{frame}[fragile] {\textit{std::forward} - example with \textit{std::forward}}
+\begin{lstlisting}[style=customcpp]
+void anotherFun(Class& aArg){
+	std::cout<<"L-value\n";
+}
+void anotherFun(Class&& aArg){
+	std::cout<<"R-value\n";
+}
+template<typename T>
+void fun(T&& aArg){
+	anotherFun(std::forward<T>(aArg));
+}
+// ...
+Class obj1;
+fun(obj1); // Output: L-value
+fun(Class{}); // Output: R-value
+\end{lstlisting}
+\end{frame}
+
+\begin{frame}[fragile] {\textit{std::forward} - example explanation}
+\begin{lstlisting}[style=customcpp]
+void anotherFun(Class& aArg){
+	std::cout<<"L-value\n";
+}
+void anotherFun(Class&& aArg){
+	std::cout<<"R-value\n";
+}
+// ..
+Class&& a = Class{};
+anotherFun(a); // Output: L-value
+\end{lstlisting}
+R-value reference is passing to a method as L-value reference. To pass it as R-value reference you have to use \textit{std::move}.
+
+\end{frame}
+
+\begin{frame}[fragile] {Why it is so important?}
+\begin{lstlisting}[style=customcpp]
+void fun(Class&& aArg){
+	std::cout<<"fun\n";
+}
+\end{lstlisting}
+In method \textit{fun} the argument is passing by r-value reference, what means that it doesn't have to be valid outside of it, because it is a temporary object and it will be destroyed while leaving the method.  Therefore you can take everything from the argument, i. e.: replace pointers:
+\begin{lstlisting}[style=customcpp]
+void fun(Class&& aArg){
+	this->iPointer = aArg.iPointer;
+	aArg.iPointer = nullptr;
+}
+\end{lstlisting}
+The argument \textbf{can't} be \textit{const}.
+\end{frame}
+
+
+\begin{frame}[fragile] {Move constructor and move assignment operator}
+A move constructor is similar to a copy constructor with a small difference - an argument is passing by nonconst r-value reference.
+\begin{lstlisting}[style=customcpp]
+Class(Class&& aArg) : iPointer{aArg.iPointer} {
+  aArg.iPointer = nullptr;
+}
+\end{lstlisting}
+
+A move assignment operator it is a R-value version of an assignment operator.
+\begin{lstlisting}[style=customcpp]
+Class& operator=(Class&& aArg) {
+  iPointer = aArg.iPointer;
+  aArg.iPointer = nullptr;
+  return *this;
+}
+\end{lstlisting}
+\end{frame}
+
+
+\begin{frame}[fragile]{Rule of 3; now it is Rule of 5}
+ The Rule of 3 in C++11 is extended to the Rule of 5, because of R-value related methods. Therefore the following method should be implemented: 
+ \begin{itemize}
+ \item Copy constructor
+ \item Move constructor
+ \item Assignment operator
+ \item Move assignment operator 
+ \item Virtual destructor
+ \end{itemize}
+\end{frame}
+
+
+\begin{frame}[fragile]{What about setters?}
+\begin{lstlisting}[style=customcpp]
+void Class::setString(std::string aArg) {
+  iString = std::move(aArg);
+}
+\end{lstlisting}
+\textbf{vs}
+\begin{lstlisting}[style=customcpp]
+void Class::setString(const std::string& aArg){
+  iString = aArg;
+}
+void Class::setString(std::string&& aArg){
+  iString = std::move(aArg);
+}
+\end{lstlisting}
+\end{frame}
+
+
+\begin{frame}[fragile]{What about setters? }
+\begin{figure}[!htb]
+    \centering
+    \begin{minipage}{.5\textwidth}
+        \centering
+\textbf{By value}
+    \end{minipage}%
+    \begin{minipage}{0.5\textwidth}
+        \centering
+\textbf{By reference}
+    \end{minipage}
+    \end{figure}
+    
+\begin{lstlisting}[style=customcpp]
+cl.setString("abc");
+\end{lstlisting}
+
+\begin{figure}[!htb]
+    \centering
+    \begin{minipage}{.5\textwidth}
+        \centering
+\begin{itemize}
+\item constructor
+\item move assignment operator
+\end{itemize}
+    \end{minipage}%
+    \begin{minipage}{0.5\textwidth}
+        \centering
+\begin{itemize}
+\item constructor
+\item move assignment operator
+\end{itemize}
+    \end{minipage}
+\end{figure}
+    
+\begin{lstlisting}[style=customcpp]
+std::string myString{"abc"};
+cl.setString(myString);
+\end{lstlisting}
+\begin{figure}[!htb]
+    \centering
+    \begin{minipage}{.5\textwidth}
+        \centering
+\begin{itemize}
+\item copy constructor
+\item move assignment operator
+\end{itemize}
+    \end{minipage}%
+    \begin{minipage}{0.5\textwidth}
+        \centering
+\begin{itemize}
+\item  assignment operator
+\end{itemize}
+    \end{minipage}
+\end{figure}
+\end{frame}
+
+
+\begin{frame}[fragile]{What about setters? }
+
+\begin{lstlisting}[style=customcpp]
+std::string myString{"abc"};
+cl.setString(std::move(myString));
+\end{lstlisting}
+\begin{figure}[!htb]
+    \centering
+    \begin{minipage}{.5\textwidth}
+        \centering
+\textbf{By value}
+\begin{itemize}
+\item move constructor
+\item move assignment operator
+\end{itemize}
+    \end{minipage}%
+    \begin{minipage}{0.5\textwidth}
+        \centering
+\textbf{By reference}
+\begin{itemize}
+\item move assignment operator
+\end{itemize}
+    \end{minipage}
+\end{figure}
+\end{frame}
+
+\begin{frame}[fragile]{Lambda}
+\begin{center}
+{\Huge \textbf{Lambda}}
+\end{center}
+\end{frame}
+
+\begin{frame}[fragile]{Lambda}
+\begin{lstlisting}[style=customcpp]
+// method
+int fun(double aArg1, float aArg2){
+  return static_cast<int>(aArg1 + aArg2);
+}
+ // pointer to method
+ int (*ptrFun)(double, float) = fun;
+ fun(1.2, 3.4f);
+ 
+ // lambda
+ int (*ptrFunLambda)(double, float) =
+  [](double aArg1, float aArg2)->int { return static_cast<int>(aArg1 + aArg2);};
+  ptrFunLambda(1.2, 3.4f);
+\end{lstlisting}
+\end{frame}
+
+
+\begin{frame}[fragile]{Lambda structure - passing arguments}
+\begin{lstlisting}[style=customcpp]
+[passingArguments](ArgType1 arg1, ArgType2 arg1) mutable -> ReturnType { 
+	ReturnType value;
+	return value;
+}
+\end{lstlisting}
+\textit{[passingArguments]} - Passing variables to lambda while creating lambda. Possible options: \\
+
+\& - all variables passing by reference, \\
+= - all variables passing by value (copy constructor is called),\\
+\&, var1, var2 - \textit{var1}, \textit{var2} passing by value, other by reference,\\
+=, \&var1, \&var2 - \textit{var1}, \textit{var2} passing by reference, other by value.\\
+\begin{lstlisting}[style=customcpp]
+auto ptrRef = [=, &str2](int aArg1){ return str1.size() + str2.size() + str3.size() + aArg1;};
+}
+\end{lstlisting}
+\end{frame}
+
+\begin{frame}[fragile]{Lambda structure -  mutable}
+\begin{lstlisting}[style=customcpp]
+int value = 0;
+auto ptrRef = [=]() mutable { ++value;};
+ptrRef();
+\end{lstlisting}
+mutable - it is required if \textit{value} is passed by value.
+\end{frame}
+
+\begin{frame}[fragile]{Lambda structure -  return type}
+\begin{lstlisting}[style=customcpp]
+double value = 12.345;
+auto lambda1 = [&]() -> int { return value;};
+std::cout<<lambda1();
+	
+double value1 = 12.345;
+double value2 = 54.321;
+auto lambda2 = [&]() -> decltype(value1 + value2) { return value1 + value2;};
+std::cout<<lambda2();
+\end{lstlisting}
+\end{frame}
+
+
+\begin{frame}[fragile]{Lambda with STL}
+
+\begin{lstlisting}[style=customcpp]
+std::vector<int> v{1, 2, 3, 4};
+const auto it = std::find_if(
+	v.begin(), 
+	v.end(), 
+	[](const int& aArg){return aArg % 2 == 0;});
+std::cout<<*it;
+\end{lstlisting}
+\begin{itemize}
+\item STL has many methods in algorithm that end with \textit{\_if} to easily support lambdas.
+\item It is very likely that lambda will be inlined.
+\end{itemize}
+\end{frame}
+
+\begin{frame}[fragile]{auto}
+\begin{center}
+{\Huge \textbf{auto}}
+\end{center}
+\end{frame}
+
+\begin{frame}[fragile]{auto}
+\begin{lstlisting}[style=customcpp]
+std::string fun(){
+	return std::string{"as"};
+}
+std::string& funRef(){
+	static std::tring str{"abc"};
+	return str;
+}
+/* ... */
+auto var1 = 1;         // <-- var1
+auto var2 = fun();     // <-- var2
+auto var3 = funRef();  // <-- var3
+	
+int intValue = 0;
+int& intRef = intValue;
+auto var4 = intRef;     // <-- var4
+\end{lstlisting}
+\end{frame}
+
+\begin{frame}[fragile]{auto}
+\begin{lstlisting}[style=customcpp]
+std::string fun(){
+	return std::string{"as"};
+}
+std::string& funRef(){
+	static std::tring str{"abc"};
+	return str;
+}
+/* ... */
+auto var1 = 1;         // <-- int
+auto var2 = fun();     // <-- std::string
+auto var3 = funRef();  // <-- std::string
+	
+int intValue = 0;
+int& intRef = intValue;
+auto var4 = intRef;     // <-- int
+\end{lstlisting}
+\end{frame}
+
+\begin{frame}[fragile]{auto}
+\begin{lstlisting}[style=customcpp]
+int intValue = 10;
+auto var5 = std::move(intValue); // <-- var5
+auto& var6 = std::move(intValue); // <-- var6
+auto&& var7 = std::move(intValue); // <-- var7
+
+const int intValueC = 0;
+auto var8 = intValueC;     // <-- var8
+auto& var9 = intValueC; // <-- var9
+const auto& var10 = intValueC; // <-- var10
+
+auto var11 = {1, 2, 3}; // <-- var11   
+auto var12 = {1}; // <-- var12
+auto var13{1}; // <-- var13
+auto var14{1, 2};  // <-- var14
+\end{lstlisting}
+\end{frame}
+
+\begin{frame}[fragile]{auto}
+\begin{lstlisting}[style=customcpp]
+int intValue = 10;
+auto var5 = std::move(intValue); // <-- int
+auto& var6 = std::move(intValue); // <-- int&
+auto&& var7 = std::move(intValue); // <-- int&&
+
+const int intValueC = 0;
+auto var8 = intValueC;     // <-- int
+auto& var9 = intValueC; // <-- const int&
+const auto& var10 = intValue; // <-- const int&
+
+auto var11 = {1, 2, 3}; // <-- std::initializer_list
+auto var12 = {1}; // <-- std::initializer_list, C++17: int
+auto var13{1}; // <-- int
+auto var14{1, 2};  // <-- Compilation Error
+\end{lstlisting}
+\end{frame}
+
+\begin{frame}[fragile]{auto}
+
+{\Huge \textit{auto} is \textbf{never} deduced as reference}
+\end{frame}
+
+\begin{frame}[fragile]{Variadic templates}
+\begin{center}
+{\Huge \textbf{Variadic templates}}
+\end{center}
+\end{frame}
+
+\begin{frame}[fragile]{Variadic templates}
+\begin{lstlisting}[style=customcpp]
+template<typename T>
+void write(const T& aArg){
+	std::cout<<aArg<<std::endl;
+}
+template<typename T1, typename ...T2>
+void write(const T1& aArg, const T2& ...aArgs){
+	std::cout<<aArg<<std::endl;
+	write(aArgs...);
+}
+template<typename ...T>
+void fun(const T&...aArg){
+	std::cout<<"Arguments: "<<sizeof...(T)<<std::endl;
+	write(aArg...);
+}
+fun(1, 2, 3, 4);
+\end{lstlisting}
+\end{frame}
+
+\begin{frame}[fragile]{Enums}
+\begin{center}
+{\Huge \textbf{Enums}}
+\end{center}
+\end{frame}
+
+\begin{frame}[fragile]{Enums}
+\begin{lstlisting}[style=customcpp]
+enum class MyEnum : char { VALUE1, VALUE2};
+
+MyEnum var1 = MyEnum::VALUE2;
+MyEnum var2 = static_cast<MyEnum>(1);
+
+std::cout<<static_cast<int>(var1)<<std::endl;
+std::cout<<static_cast<int>(var2)<<std::endl;
+
+std::cout<<sizeof(var1);
+\end{lstlisting}
+\end{frame}
+
+\begin{frame}[fragile]{Suffix}
+\begin{center}
+{\Huge \textbf{Suffix}}
+\end{center}
+\end{frame}
+
+\begin{frame}[fragile]{Suffix}
+\begin{lstlisting}[style=customcpp]
+constexpr long double operator"" _deg (long double deg) {
+    return deg * 3.141592 / 180;
+}
+
+long double angle = 90_deg;
+
+constexpr std::chrono::minutes operator"" _min(unsigned long long m) {
+    return std::chrono::minutes(m);
+}
+
+std::chrono::minutes var = 20_min;
+\end{lstlisting}
+C++14 has several predefined suffixes: min, hours, seconds, etc.
+\end{frame}
+
+\begin{frame}[fragile]{Const expressions}
+\begin{center}
+{\Huge \textbf{Const expressions}}
+\end{center}
+\end{frame}
+
+\begin{frame}[fragile]{Const expressions}
+\begin{lstlisting}[style=customcpp]
+struct Class {
+	constexpr Class(int aArg1, int aArg2)  : iVar1{aArg1}, iVar2{aArg2}{}
+	int iVar1;
+	int iVar2;
+};
+constexpr int fun(const int aArg){
+	return 5 + aArg;
+}
+/* ... */
+	constexpr int var1 = 2;
+	constexpr int var2 = fun(4);
+	constexpr Class cl{1, 2};
+\end{lstlisting}
+\end{frame}
+
+\begin{frame}[fragile]{Const expressions}
+\begin{lstlisting}[style=customcpp]
+constexpr int fun1(int aArg){
+	return aArg < 0 ? -1 : 1;
+}
+constexpr int ret = fun1(5);
+\end{lstlisting}
+C++14:
+\begin{lstlisting}[style=customcpp]
+constexpr int fun2(int aArg){
+	if (aArg < 0)
+		return -1;
+	else
+		return 1;
+}
+constexpr int ret = fun2(5);
+\end{lstlisting}
+\end{frame}
+
+\begin{frame}[fragile]{Const expressions}
+All methods in header flie.
+\begin{lstlisting}[style=customcpp]
+struct Class {
+	constexpr Class() {}
+	constexpr int fun(int aArg) const{
+		return iValue + aArg;
+	}
+	int iValue = 0;
+};
+\end{lstlisting}
+In source file:
+\begin{lstlisting}[style=customcpp]
+constexpr Class obj;
+obj.fun(10);
+\end{lstlisting}
+\end{frame}
+
+\begin{frame}[fragile]{Initializer list}
+\begin{center}
+{\Huge \textbf{Initializer list}}
+\end{center}
+\end{frame}
+
+\begin{frame}[fragile]{Initializer list}
+\begin{lstlisting}[style=customcpp]
+struct Class {
+	Class(std::initializer_list<int> aArg) : iVar(aArg.begin(), aArg.end()){}
+
+	std::vector<int> iVar;
+};
+	Class var{1, 2, 3, 4};
+  
+	std::vector<int> var2{1, 2, 3, 4, 5, 6, 7};
+\end{lstlisting}
+\end{frame}
+
+\begin{frame}[fragile]{Attributes}
+\begin{center}
+{\Huge \textbf{Attributes}}
+\end{center}
+\end{frame}
+
+\begin{frame}[fragile]{Attributes: \textit{final}, \textit{override}, \textit{default}, \textit{delete}, }
+\begin{lstlisting}[style=customcpp]
+struct FinalClass final {
+	FinalClass(const FinalClass&) = delete;
+	virtual ~FinalClass() = default;
+	virtual void overrideFun() override;
+	virtual void finalFun() final;
+};
+
+template<typename T>
+void fun(T& aArg){}
+
+template<>
+void fun(int&) = delete;
+\end{lstlisting}
+\end{frame}
+
+\begin{frame}[fragile]{Foreach}
+\begin{center}
+{\Huge \textbf{Foreach}}
+\end{center}
+\end{frame}
+
+\begin{frame}[fragile]{Foreach}
+\begin{lstlisting}[style=customcpp]
+std::vector<int> var{1, 2, 3};
+for (const auto& i : var) {
+}
+\end{lstlisting}
+Foreach requires methods \textit{begin} and \textit{end}.
+\end{frame}
+
+\begin{frame}[fragile]{noexcept}
+\begin{lstlisting}[style=customcpp]
+void fun() noexcept {}
+\end{lstlisting}
+\textit{throw()} - possible that stack unwinding \\
+\textit{noexcept} - now stack unwiding - faster code \\
+\end{frame}
+
+\begin{frame}[fragile]{Brackets \{ \}}
+\begin{center}
+{\Huge \textbf{Brackets \{ \}}}
+\end{center}
+\end{frame}
+
+\begin{frame}[fragile]{Brackets \{ \}}
+\begin{lstlisting}[style=customcpp]
+struct Class {
+   Class(int aArg){}
+};
+	Class cl{1.23}; // It will not compile
+	Class cl{static_cast<int>(1.23)}; // this is ok
+\end{lstlisting}
+There is no automatic conversion.
+\end{frame}
+
+\begin{frame}[fragile]{Constructor delegate}
+\begin{center}
+{\Huge \textbf{Constructor delegate}}
+\end{center}
+\end{frame}
+
+\begin{frame}[fragile]{Calling constructor from constructor}
+\begin{lstlisting}[style=customcpp]
+struct Class {
+	Class() : Class(0){}
+
+	Class(int aArg){}
+};
+\end{lstlisting}
+It is similar to Java.
+\end{frame}
+
+\begin{frame}[fragile]{nullptr}
+\begin{center}
+{\Huge \textbf{nullptr}}
+\end{center}
+\end{frame}
+
+\begin{frame}[fragile]{nullptr}
+\begin{lstlisting}[style=customcpp]
+void fun(char* aArg){
+	std::cout<<"char*\n";
+}
+
+void fun(int aArg){
+	std::cout<<"int\n";
+}
+	fun(0); // int
+	fun(NULL); // it will not compile
+	fun(nullptr); // char*
+\end{lstlisting}
+\end{frame}
+
+\begin{frame}[fragile]{STL in C++11} 
+\begin{center}
+{\Huge \textbf{STL in C++11}}
+\end{center}
+\end{frame}
+
+\begin{frame}[fragile]{Thread}
+\begin{center}
+{\Huge \textbf{Thread}}
+\end{center}
+\end{frame}
+
+\begin{frame}[fragile]{Thread - mutex} 
+\begin{lstlisting}[style=customcpp]
+struct Counter {
+    std::mutex mutex; // <-- mutex
+    int value = 0;
+
+    void increment(){
+        std::lock_guard<std::mutex> guard(mutex); // <-- lock
+        ++value;
+    }
+};
+
+\end{lstlisting}
+\end{frame}
+
+\begin{frame}[fragile]{Thread - mutex II} 
+\begin{lstlisting}[style=customcpp]
+ for(int i = 0; i < 5; ++i){
+	        threads.push_back(std::thread([&counter](){
+	            for(int i = 0; i < 100; ++i){
+	                counter.increment();
+	            }
+	        }));
+	    }
+
+	    for(auto& thread : threads){
+	        thread.join(); // <-- wait
+	    }
+\end{lstlisting}
+\end{frame}
+
+\begin{frame}[fragile]{Thread - async} 
+\begin{lstlisting}[style=customcpp]
+#include <thread>
+int fun(){
+	std::cout<<"Thread id: "<<std::this_thread::get_id()<<std::endl;
+	int i = 0;
+	for (; i < 100; ++i){
+		std::this_thread::sleep_for(std::chrono::nanoseconds{100000000});
+	}
+	return i;
+}
+\end{lstlisting}
+\end{frame}
+
+\begin{frame}[fragile]{Thread - async II} 
+\begin{lstlisting}[style=customcpp]
+#include <future>
+int main() {
+	std::cout<<"Main Thread id: "<<std::this_thread::get_id()<<std::endl;
+	std::vector<std::future<int>> v;
+	for (int i = 0; i < 2; ++i) {
+		std::future<int> ret = std::async(std::launch::async, fun);
+		v.push_back(std::move(ret));
+	}
+	std::cout<<"wait"<<std::endl;
+	for (std::future<int>& fut : v) {
+		int value = fut.get();
+		std::cout<<value<<std::endl;
+	}
+	return 0;
+}
+\end{lstlisting}
+\end{frame}
+
+\begin{frame}[fragile]{Thread - async II} 
+\begin{lstlisting}[style=customcpp]
+std::future<int> ret = std::async(std::launch::async, fun);
+\end{lstlisting}
+\begin{itemize}
+\item std::launch::async - new thread
+\item std::launch::deferred - caller thread
+\end{itemize}
+
+Destructor of \textit{std::future<T>} waits for execution of async call.\\
+C++14: waits if all are true
+\begin{itemize}
+\item created from std::async
+\item shared object is not ready
+\item the last reference of shared object
+\end{itemize}
+\end{frame}
+
+\begin{frame}[fragile]{Smart pointers}
+\begin{center}
+{\Huge \textbf{Smart pointers}}
+\end{center}
+\end{frame}
+
+\begin{frame}[fragile]{Smart pointers}
+\textbf{DON'T USE RAW POINTERS}
+\begin{lstlisting}[style=customcpp]
+#include <memory>
+
+std::shared_ptr<int> ptr1 = std::make_shared<int>(2);
+
+std::shared_ptr<int> ptr2(new int[size], [](int* aArg){ delete[] aArg;});
+
+std::unique_ptr<int> ptr3(new int()); 
+
+std::unique_ptr<int> ptr4 = std::make_unique<int>(); // C++14
+\end{lstlisting}
+\end{frame}
+
+
+\begin{frame}[fragile]{Smart pointers}
+\textbf{DON'T USE RAW POINTERS}
+\begin{lstlisting}[style=customcpp]
+#include <memory>
+
+struct Base {
+	virtual ~Base() = default;
+};
+struct Derivative : public Base {};
+
+std::shared_ptr<Base> ptrBase = 
+	std::make_shared<Derivative>();
+std::shared_ptr<Derivative> ptrDerivative = 
+	std::dynamic_pointer_cast<Derivative>(ptrBase);
+\end{lstlisting}
+\end{frame}
+
+
+\begin{frame}[fragile]{Smart pointers}
+\textbf{DON'T USE RAW POINTERS}
+\begin{lstlisting}[style=customcpp]
+#include <memory>
+
+struct Class {};
+
+std::shared_ptr<Class> ptr = std::make_shared<Class>();
+std::weak_ptr<Class> weakPtr = ptr;
+
+std::shared_ptr<Class> sharedPtrFrom = weakPtr.lock();
+/* using sharedPtrFrom */
+\end{lstlisting}
+\end{frame}
+
+\begin{frame}[fragile]{tuple}
+\begin{center}
+{\Huge \textbf{tuple}}
+\end{center}
+\end{frame}
+
+\begin{frame}[fragile]{std::tuple}
+\begin{lstlisting}[style=customcpp]
+#include <tuple>
+std::tuple<int, double> fun(){
+	return std::make_tuple(1, 2.3);
+}
+// ...
+	auto ret = fun();
+	int intValue = std::get<0>(ret);
+	double doubleValue = std::get<1>(ret);
+
+\end{lstlisting}
+\end{frame}
+
+\begin{frame}[fragile]{std::tie}
+\begin{lstlisting}[style=customcpp]
+#include <tuple>
+std::tuple<int, double> fun(){
+	return std::make_tuple(1, 2.3);
+}
+// ...
+	int intValue;
+	double doubleValue;
+	std::tie(intValue, doubleValue) = fun();
+	std::cout<<intValue<<" "<<doubleValue<<std::endl;
+	
+	// C++ 17 (now only Clang):
+	auto [intValue, doubleValue] = fun();
+\end{lstlisting}
+\end{frame}
+
+\begin{frame}[fragile]{array}
+\begin{center}
+{\Huge \textbf{array}}
+\end{center}
+\end{frame}
+
+\begin{frame}[fragile]{std::array}
+\textbf{DON'T USE RAW ARRAYS}
+\begin{lstlisting}[style=customcpp]
+#include <array>
+std::array<int, 5> arr1 = {1, 2, 3};
+
+// C++14 only one {}
+std::array<int, 5> arr2{{1, 2, 3}};
+
+std::cout<<"size: "<<arr1.size()<<std::endl;
+for (auto& it : arr1){
+	std::cout<<it<<std::endl;
+}
+\end{lstlisting}
+\end{frame}
+
+\begin{frame}[fragile]{bind}
+\begin{center}
+{\Huge \textbf{bind}}
+\end{center}
+\end{frame}
+
+\begin{frame}[fragile]{std::bind}
+\begin{lstlisting}[style=customcpp]
+#include <functional>
+void fun1(){
+	std::cout<<"void fun1()\n";
+}
+void fun2(int aArg){
+	std::cout<<"void fun2(int aArg)\n";
+}
+// ...
+int intValue = 1;
+std::function<void()> functor1a = fun1;
+std::function<void()> functor1 = std::bind(fun1);
+functor1();
+// with one argument
+std::function<void()> functor2 = std::bind(fun2, intValue);
+functor2();
+\end{lstlisting}
+\end{frame}
+
+\begin{frame}[fragile]{std::bind}
+\begin{lstlisting}[style=customcpp]
+#include <functional>
+void fun3(int& aArg, double* aPtr){
+	std::cout<<"void fun3(int& aArg, double* aPtr)\n";
+}
+// ...
+std::function<void()> functor3 = std::bind(fun3, intValue, nullptr);
+functor3();
+
+using namespace std::placeholders;
+std::function<void(int&)> functor4 = std::bind(fun3, _1, nullptr);
+functor4(intValue);
+
+std::function<void(double*, int&)> functor5 = std::bind(fun3, _2, _1);
+functor5(nullptr, intValue);
+\end{lstlisting}
+\end{frame}
+
+\begin{frame}[fragile]{std::bind}
+\begin{lstlisting}[style=customcpp]
+#include <functional>
+struct Class{
+	void method(int aArg)  {
+		std::cout<<"void Class::method(int aArg)\n";
+	}
+};
+// ...
+Class obj;
+// class method
+std::function<void( Class*, int)> functor6 = &Class::method;
+functor6(&obj, intValue);
+// class method with placeholder
+std::function<void(int)> functor7 = std::bind(&Class::method, &obj, _1);
+functor7(intValue);
+\end{lstlisting}
+\end{frame}
+
+\begin{frame}[fragile]{Type traits}
+\begin{center}
+{\Huge \textbf{Type traits}}
+\end{center}
+\end{frame}
+
+\begin{frame}[fragile]{Type traits}
+\begin{lstlisting}[style=customcpp]
+#include <type_traits>
+template<typename T>
+void traits(){
+	cout<<is_array<T>::value<<"\n";
+	cout<<is_class<T>::value<<"\n";
+	cout<<is_function<T>::value<<"\n";
+	cout<<is_pointer<T>::value<<"\n";
+	cout<<is_polymorphic<T>::value<<"\n";
+}
+//...
+traits<int>();
+traits<std::string>();
+\end{lstlisting}
+\end{frame}
+
+\begin{frame}[fragile]{Type traits - std::enable\_if}
+\begin{lstlisting}[style=customcpp]
+#include <type_traits>
+template<class T>
+typename std::enable_if<std::is_integral<T>::value, bool>::type
+  is_odd (T i) {
+	return i % 2;
+}
+//...
+int intValue = 0;
+is_odd(intValue);
+std::string strValue{"abc"};
+is_odd(strValue); // Error
+\end{lstlisting}
+\end{frame}
+
+\begin{frame}[fragile]{Type traits - std::enable\_if}
+\begin{lstlisting}[style=customcpp]
+#include <type_traits>
+template<class T,
+         class = typename std::enable_if<std::is_integral<T>::value>::type>
+bool is_even (T i) {
+	return !bool(i % 2);
+}
+//...
+int intValue = 0;
+is_even(intValue);
+std::string strValue{"abc"};
+is_even(strValue); // Error
+\end{lstlisting}
+\end{frame}
+
+\begin{frame}[fragile]{ratio}
+\begin{center}
+{\Huge \textbf{ratio}}
+\end{center}
+\end{frame}
+
+\begin{frame}[fragile]{std::ratio}
+\begin{lstlisting}[style=customcpp]
+#include <ratio>
+std::ratio<1,3> one_third;
+std::ratio<2,4> two_fourths;
+
+std::cout << "one_third= " << std::ratio<1,3>::num
+	<< "/" << std::ratio<1,3>::den << std::endl;
+std::cout << "two_fourths= " << std::ratio<2,4>::num
+	<< "/" << std::ratio<2,4>::den << std::endl;
+
+std::ratio_add<std::ratio<1,3>, std::ratio<2,4>> sum;
+std::cout << "sum= " <<
+	std::ratio_add<std::ratio<1,3>, std::ratio<2,4>>::num
+	<< "/" <<
+	std::ratio_add<std::ratio<1,3>, std::ratio<2,4>>::den;
+
+\end{lstlisting}
+\end{frame}
+
+\begin{frame}[fragile]{chrono}
+\begin{center}
+{\Huge \textbf{chrono}}
+\end{center}
+\end{frame}
+
+\begin{frame}[fragile]{std::chrono}
+\begin{lstlisting}[style=customcpp]
+#include <chrono>
+std::chrono::time_point<std::chrono::system_clock> start, end;
+start = std::chrono::system_clock::now();
+std::cout<<"write sth\n";
+end = std::chrono::system_clock::now();
+std::chrono::nanoseconds diff = end - start;
+std::cout<<diff.count()<<"ns\n";
+
+std::time_t end_time = std::chrono::system_clock::to_time_t(end);
+std::cout << "finished computation at " << std::ctime(&end_time);
+// write sth
+// 25000ns
+// finished computation at Sun Dec 18 17:06:17 2016
+\end{lstlisting}
+\end{frame}
+
+\begin{frame}[fragile]{C++14}
+\begin{center}
+{\Huge \textbf{C++14}}
+\end{center}
+\end{frame}
+
+\begin{frame}[fragile]{C++14}
+Binary literal \& separator:
+\begin{lstlisting}[style=customcpp]
+int binary = 0b101; // = 5
+int bigNumber = 1'000'000; // ' - separator
+\end{lstlisting}
+Automatic return type decuction:
+\begin{lstlisting}[style=customcpp]
+auto fun(bool aArg){
+	if (aArg)
+		return 1;
+	else
+		return 0;
+}
+\end{lstlisting}
+\end{frame}
+
+\begin{frame}[fragile]{C++14}
+Generic lambda:
+\begin{lstlisting}[style=customcpp]
+auto lambda = [](auto x, auto y) {return x + y;};
+std::cout<<lambda(1, 2.3);
+\end{lstlisting}
+Lambda capture expressions:
+\begin{lstlisting}[style=customcpp]
+int var = 1;
+auto lambda = [inside = std::move(var)](auto x, auto y) {return x + y + inside;};
+std::cout<<lambda(1, 2.3);
+\end{lstlisting}
+\end{frame}
+
+\end{document}
+
