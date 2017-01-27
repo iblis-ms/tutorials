@@ -6,3 +6,5 @@
 **/*.xcworkspace
 **/Pods
 **/Xcode_Project
+**/conanbuildinfo.cmake
+**/conaninfo.txt
