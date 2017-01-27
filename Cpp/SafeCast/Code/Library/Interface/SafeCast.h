@@ -1,37 +1,43 @@
 // Author: Marcin Serwach
-// Tutorial: https://github.com/iblis-ms/tutorials/tree/master/Cpp/GTest_GMock
+// TBaseutorial: https://github.com/iblis-ms/tutorials/tree/master/Cpp/GTBaseest_GMock
 
-#ifndef IBLIS_SAFECAST_H_
-#define IBLIS_SAFECAST_H_
+#ifndef IBLIS_SAFECASTBase_H_
+#define IBLIS_SAFECASTBase_H_
 
 #include <limits>
 #include <type_traits>
 
-template <typename U, typename T>
-constexpr U safe_cast(T t)
+namespace NSafeCast
 {
-	constexpr auto digits_t = std::numeric_limits<T>::digits;
-	constexpr auto digits_u = std::numeric_limits<U>::digits;
+
+template <typename TConverted, typename TBase>
+constexpr TConverted safe_cast(TBase aValue)
+{
+	constexpr auto digitsBase = std::numeric_limits<TBase>::digits;
+	constexpr auto digitsConverted = std::numeric_limits<TConverted>::digits;
 
 	// floating points holds larger values, but 'digits' returns mantissa + sign. For float: 24.
-	if (digits_t > digits_u || std::is_floating_point<T>::value)
+	if (digitsBase > digitsConverted || std::is_floating_point<TBase>::value)
 	{
-		constexpr auto max_u = std::numeric_limits<U>::max();
-		constexpr auto max_tu = static_cast<T>(max_u);
+		constexpr auto maxConverted = std::numeric_limits<TConverted>::max();
+		constexpr auto maxConvertedCastedBase = static_cast<TBase>(maxConverted);
 
-		if (t >= max_tu) {
-			return max_u;
+		if (aValue >= maxConvertedCastedBase) 
+		{
+			return maxConverted;
 		}
 		// std::numeric_limits::min return smallest possitive value. Floats have sign bit, so minus max is the minimal value.
-		constexpr auto min_u = std::is_integral<U>::value ? std::numeric_limits<U>::min() : -std::numeric_limits<U>::max();
+		constexpr auto minConverted = std::is_integral<TConverted>::value ? std::numeric_limits<TConverted>::min() : -std::numeric_limits<TConverted>::max();
 
-		constexpr auto min_tu = std::is_signed<U>::value && std::is_unsigned<T>::value ? 0 : static_cast<T>(min_u);
-		if (t < min_tu) {
-			return min_u;
+		constexpr auto minConvertedCastedBase = std::is_signed<TConverted>::value && std::is_unsigned<TBase>::value ? 0 : static_cast<TBase>(minConverted);
+		if (aValue < minConvertedCastedBase) 
+		{
+			return minConverted;
 		}
 	}
 
-	return static_cast<U>(t);
+	return static_cast<TConverted>(aValue);
 }
+} // namespace NSafeCast
 
-#endif // IBLIS_SAFECAST_H_
+#endif // IBLIS_SAFECASTBase_H_

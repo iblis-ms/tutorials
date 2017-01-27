@@ -7,13 +7,22 @@
 #include <gtest/gtest.h>
 
 using namespace ::testing;
+using namespace ::NSafeCast;
 
-TEST(TestCase, testCase_fatal_fail_FAIL)
+class CSafeCastTest : public Test
 {
-	int b = 10;
-	int a = safe_cast<int>(b);
-	//ASSERT_EQ(b, a);
+};
 
+TEST_F(CSafeCastTest, test)
+{
+	const long base = std::numeric_limits<long>::max();
+	const int converted = safe_cast<int, long>(base);
+	const int expected = std::numeric_limits<int>::max();
+	ASSERT_EQ(converted, expected);
+}
+int main(int argc, char **argv) {
+	InitGoogleTest(&argc, argv);
+	return RUN_ALL_TESTS();
 }
 
 
