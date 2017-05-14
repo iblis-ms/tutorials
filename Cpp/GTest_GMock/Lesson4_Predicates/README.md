@@ -1,12 +1,12 @@
-#GTest & GMock tutorial - lesson 4 - GTest: Predicates
+# GTest & GMock tutorial - lesson 4 - GTest: Predicates
 This lesson shows how to use predicates.
 
-#Target of this lesson
+# Target of this lesson
 After this lesson you will know how to:
 - use predicates,
 - format a failure output.
 
-#Used methods, macros & objects
+# Used methods, macros & objects
 - ASSERT_PRED1, ASSERT_PRED2
 - AssertionSuccess
 - AssertionFailure

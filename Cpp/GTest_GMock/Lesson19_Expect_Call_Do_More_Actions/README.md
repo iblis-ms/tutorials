@@ -1,11 +1,11 @@
-#GTest & GMock tutorial - lesson 19 - GMock: EXPECT_CALL - Do More Actions
+# GTest & GMock tutorial - lesson 19 - GMock: EXPECT_CALL - Do More Actions
 This lesson shows how to do more than one action when a mocked method is called.
 
-#Target of this lesson
+# Target of this lesson
 After this lesson you will know how to:
 - do more than one action when a mocked method is called.
 
-#Used methods, macros & objects
+# Used methods, macros & objects
 - DoAll
 
 

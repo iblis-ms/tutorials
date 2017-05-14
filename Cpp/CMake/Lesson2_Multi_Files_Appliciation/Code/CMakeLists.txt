@@ -4,7 +4,8 @@ CMake_minimum_required(VERSION 3.5.2 FATAL_ERROR) # minimal version should be re
 
 project(CMakeLesson2) # project name. It defines a variable $PROJECT_NAME
 
-set(SOURCE_FILES main.cpp Class.cpp) # variable SOURCE_FILES definition in the current scope (this file).
+set(SOURCE_FILES main.cpp Class.cpp) # variable SOURCE_FILES definition in the current scope 
+#                                      (this file and files that will be included by this file).
 
 message(STATUS "Source files: ${SOURCE_FILES}")
 # The first argument can be omitted. Following options are possible:

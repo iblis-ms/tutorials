@@ -8,5 +8,5 @@ fi
 mkdir "$output"
 
 cd "$output"
-CMake ../Code
+cmake ../Code
 make

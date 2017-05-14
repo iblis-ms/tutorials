@@ -1,7 +1,7 @@
-#Move  in C++11 and in C++03 using [Boost.Move](http://www.boost.org/doc/libs/1_62_0/doc/html/move.html)
+# Move  in C++11 and in C++03 using [Boost.Move](http://www.boost.org/doc/libs/1_62_0/doc/html/move.html)
 This tutorial shows how big influence has the 'move' on performance. The 'move' was added to C++11 standard. It was based on Boost.Move. This example contains 2 program: boost_move and cpp11_move. I presents Boost.Move which is compatible with C++03 (C++03 = C++98 + TR1), because there many projects that still use this dialect of C++. Both of these program use [Google Benchmark](https://github.com/google/benchmark) to easily compare passing arguments by L-value reference and R-value reference. 
 
-##What is L-value and R-value reference
+# # What is L-value and R-value reference
 Let's look at the examples with C++11 semantic:
 ```C++
 
@@ -54,7 +54,7 @@ vL.push_back(std::move(objR));
 // 'objR' after calling 'push_back', this approach meas that the contend is created once.
 ```
 
-##Results
+# # Results
 
 Boost_Benchmark_copy & Cpp11_Benchmark_copy means passing objects by reference and copied them inside method. Time of creation origin objects is not included.
 
@@ -173,10 +173,10 @@ Benchmark_rvalueConstructorInitialization & Benchmark_rvalueConstructorInitializ
 |Cpp11_Benchmark_rvalueConstructorInitialization_BigO  |   4.44 NlgN   |  5.07 NlgN   |              |
 |Cpp11_Benchmark_rvalueConstructorInitialization_RMS   |        44 %   |       42 %   |              |
 
-##Discussion
+# # Discussion
 There is huge difference between passing object by R-value reference and L-value reference. For small object passing L-value reference is a little faster. To the specific size of object passing by R-value has almost constant time. After that caching is not so efficient. Creating temporary object and passing it by R-value reference is also faster than passing by L-value reference.
 
-##Summary
+# # Summary
 Use R-value reference if you can. If you have to use old C++ dialect, you can take [Boost.Move](http://www.boost.org/doc/libs/1_62_0/doc/html/move.html). 
 
 *Author: Marcin Serwach*

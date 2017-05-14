@@ -1,19 +1,19 @@
-#GTest & GMock tutorial
+# GTest & GMock tutorial
 
 This tutorial contains several lessons that show how to use GTest and GMock. They are widely used testing frameworks for C++. Most people use only minor part of their functionality.
 
-#GTest
+# GTest
 GTest is a testing framework, which allows to write unit and functional tests. Tests are splitted into test cases than into particular tests. GTest allows to compare output of your code to expected results. It supports many types of asserts that can help you to test your code. You can find GTest framework on GitHub: [https://github.com/google/googletest](https://github.com/google/googletest).
 
-#GMock
+# GMock
 GMock is also a testing framework. However it should be used to test if a particular method with a expected argument was called. Therefore you can check if the behavior of your code is proper for a given situation. GMock uses GTest framework inside. You can find GTest framework on GitHub: [https://github.com/google/googletest](https://github.com/google/googletest).
 
-#This tutorial
+# This tutorial
 All tutorial lessons are provided with CMake project. CMake has a find_package function, which can help you to use GTest and GMock. CMake has support to find GTest library, but not GMock. However you can use GMock module plug in for CMake here: [https://github.com/triglav/cmake-findgmock](https://github.com/triglav/cmake-findgmock).
 Each lesson has its own README.md file with explanation and run.sh script to build and run tests. 
 NOTE: This a very short tutorial with huge piece of information, therefore each lesson touches something new. I will not explain once again things that were explained in previous lessons.
 
-#Table of content
+# Table of content
 1. [GTest: CMake configuration and basic tests](https://github.com/iblis-ms/tutorials/tree/master/Cpp/GTest_GMock/Lesson1_Configuration_And_Simple_Tests)
 2. [GTest: SetUp & TearDown](https://github.com/iblis-ms/tutorials/tree/master/Cpp/GTest_GMock/Lesson2_SetUp_TearDown)
 3. [GTest: Asserts for exceptions and crashes](https://github.com/iblis-ms/tutorials/tree/master/Cpp/GTest_GMock/Lesson3_Assert_Exceptions_And_Crashes)
@@ -38,5 +38,5 @@ NOTE: This a very short tutorial with huge piece of information, therefore each 
 22. [GMock: Default actions](https://github.com/iblis-ms/tutorials/tree/master/Cpp/GTest_GMock/Lesson22_Default_Action)
 
 
-#Author
+# Author
 Marcin Serwach

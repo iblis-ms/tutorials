@@ -1,7 +1,7 @@
-#GTest & GMock tutorial - lesson 9 - GTest: Filters
+# GTest & GMock tutorial - lesson 9 - GTest: Filters
 GTest allows to run only specific tests. You can pass a regular expression that filters test.
 
-#How to filter tests
+# How to filter tests
 This lesson contains following test:
 - CMyTestCase1.testCase_fail
 - CMyTestCase1.testCase_success
@@ -32,13 +32,13 @@ Note, minus sign, which negates filter.
 - CMyTestCase1.testCase_success
 - CMyTestCase2.testCase_success
 
-#Other parameters
-##Shuffle
+# Other parameters
+# # Shuffle
 You can shuffle test to check if there are not related to each other by passing *--gtest_shuffle*.
-##Repeat
+# # Repeat
 You can repeat test by providing *--gtest_repeat=1000* or repeat forever: *--gtest_repeat=-1*. You can repeat only filtered tests: *gtest_repeat=1000 --gtest_filter=FooBar*.
 
-#Target of this lesson
+# Target of this lesson
 After this lesson you will know how to:
 - run specific tests by passing filter
 - shuffle tests

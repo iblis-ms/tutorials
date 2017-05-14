@@ -1,4 +1,4 @@
-#Google Benchmark - Lesson 1 - Simple usage
+# Google Benchmark - Lesson 1 - Simple usage
 
 Google Benchmark [https://github.com/google/benchmark](https://github.com/google/benchmark) is a framework for benchmarking your code. You can check complexity of your code by running your methods with different set of input data. This framework allows easily providing big number of input data. 
 
@@ -18,12 +18,12 @@ To run tests:
 ./GBenchmark_Lesson1
 ```
 
-#Target of this lesson
+# Target of this lesson
 After this lesson you will know how to:
 - configure CMake to use Google Benchmark
 - write simple benchmark methods.
 
-#Used methods, macros & objects
+# Used methods, macros & objects
 - BENCHMARK
 - BENCHMARK_MAIN
 - benchmark::State
