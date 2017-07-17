@@ -3,7 +3,7 @@ CMake can define values of C-style 'define' preprocessor. Moreover user can also
 
 Linux, OSX: Run command to generates Makefile files (assumed that you are in sibling directory of Code directory):
 ```
-CMake ../Code
+cmake ../Code
 ```
 To compile:
 ```

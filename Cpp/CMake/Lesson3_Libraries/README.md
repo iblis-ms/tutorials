@@ -3,7 +3,7 @@ This is the fundamental lesson. You will compile: a static library, a shared lib
 
 Linux, OSX: Run command to generate Makefile files (assumed that you are in sibling directory of Code directory):
 ```
-CMake ../Code
+cmake ../Code
 ```
 To compile:
 ```

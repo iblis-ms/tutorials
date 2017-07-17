@@ -3,7 +3,7 @@ CMake has a list. This tutorial shows how it should be used based on the CMake d
 
 Linux, OSX: Run command to generates Makefile files (assumed that you are in sibling directory of Code directory):
 ```
-CMake ../Code
+cmake ../Code
 ```
 
 # Target of this lesson

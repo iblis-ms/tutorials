@@ -3,7 +3,7 @@ This lesson shows how to use CMake program on a compile multi-files application.
 
 Linux, OSX: Run command to generates Makefile files (assumed that you are in sibling directory of Code directory):
 ```
-CMake ../Code
+cmake ../Code
 ```
 To compile:
 ```

@@ -3,7 +3,7 @@ CMake can be used to specify installation process. Check build output directorie
 
 Linux, OSX: Run command to generates Makefile files (assumed that you are in sibling directory of Code directory):
 ```
-CMake ../Code
+cmake ../Code
 ```
 To compile:
 ```

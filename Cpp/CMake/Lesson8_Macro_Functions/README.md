@@ -3,7 +3,7 @@ CMake allows macro and function declarations.
 
 Linux, OSX: Run command to generates Makefile files (assumed that you are in sibling directory of Code directory):
 ```
-CMake ../Code
+cmake ../Code
 ```
 
 # Target of this lesson

@@ -3,7 +3,7 @@ Properties are related to many things (see: [CMake properties](https://CMake.org
 
 Linux, OSX: Run command to generates Makefile files (assumed that you are in sibling directory of Code directory):
 ```
-CMake ../Code
+cmake ../Code
 ```
 To compile:
 ```

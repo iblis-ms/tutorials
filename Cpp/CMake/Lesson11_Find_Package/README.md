@@ -3,7 +3,7 @@ This lesson shows how to link our project with Boost and OpenGL
 
 Linux, OSX: Run command to generates Makefile files (assumed that you are in sibling directory of Code directory):
 ```
-CMake ../Code
+cmake ../Code
 ```
 To compile:
 ```
