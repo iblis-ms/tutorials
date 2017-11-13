@@ -7,6 +7,6 @@
 CStaticLibraryInterface& CStaticLibraryFactory::create()
 {
   static CStaticLibraryHeader object;
-  int abc; // warning
+  int abc; // warning - error (if -Werror)
   return object;
 }

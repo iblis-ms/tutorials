@@ -7,7 +7,7 @@ cmake ../Code
 ```
 To compile:
 ```
-make
+cmake --build .
 ```
 To run tests:
 ```

@@ -5,14 +5,19 @@ Linux, OSX: Run command to generates Makefile files (assumed that you are in sib
 ```
 cmake ../Code
 ```
+For Windows you need to export symbols:
+```
+cmake -DCMAKE_WINDOWS_EXPORT_ALL_SYMBOLS=TRUE ..\code
+```
 To compile:
 ```
-make
+cmake --build .
 ```
 To install:
 ```
-make install
+cmake --build . --target INSTALL
 ```
+
 
 # Target of this lesson
 After this lesson you will know how to:
