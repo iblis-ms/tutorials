@@ -1,13 +1,13 @@
 # CMake tutorial - lesson 10 - Custom command and custom target
 CMake can be used for invoking a command while generating.
 
-Linux, OSX: Run command to generates Makefile files (assumed that you are in sibling directory of Code directory):
+Run command to generates project files (assumed that you are in sibling directory of Code directory):
 ```
 cmake ../Code
 ```
 To compile:
 ```
-make
+cmake --build .
 ```
 
 # Target of this lesson

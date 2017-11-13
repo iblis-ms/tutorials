@@ -1,13 +1,13 @@
 # CMake tutorial - lesson 2 - Multi file application.
 This lesson shows how to use CMake program on a compile multi-files application. 
 
-Linux, OSX: Run command to generates Makefile files (assumed that you are in sibling directory of Code directory):
+Run command to generates project files (assumed that you are in sibling directory of Code directory):
 ```
 cmake ../Code
 ```
 To compile:
 ```
-make
+cmake --build .
 ```
 
 # Target of this lesson

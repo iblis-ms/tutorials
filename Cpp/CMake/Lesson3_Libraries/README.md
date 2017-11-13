@@ -1,14 +1,20 @@
 # CMake tutorial - lesson 3 - Libraries
 This is the fundamental lesson. You will compile: a static library, a shared library and a header only library. After that executable program that uses these libraries. Header only library isn't exactly library, because it only contains header files without binary artifacts. It is typical type of library for template classes artifacts.
 
-Linux, OSX: Run command to generate Makefile files (assumed that you are in sibling directory of Code directory):
+Run command to generates project files (assumed that you are in sibling directory of Code directory):
 ```
 cmake ../Code
 ```
+For Windows you need to export symbols:
+```
+cmake -DCMAKE_WINDOWS_EXPORT_ALL_SYMBOLS=TRUE ..\code
+```
+
 To compile:
 ```
-make
+cmake --build .
 ```
+
 
 # Target of this lesson
 After this lesson you will know how to:

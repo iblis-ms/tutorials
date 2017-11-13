@@ -21,12 +21,22 @@ get_property(WHAT_IS_CPP_STANDARD TARGET ${PROJECT_NAME} PROPERTY CXX_STANDARD)
 # Displays a result.
 message(STATUS "Target: ${PROJECT_NAME} C++ standards: ${WHAT_IS_CPP_STANDARD}")
 
-# Changes a compiler warning to treat warnings as errors.
-# There is an unused variable to StaticLibraryFactory.cpp:8: abc, so program WON'T compile.
-set_property(TARGET ${PROJECT_NAME} PROPERTY COMPILE_FLAGS "-Wall -Werror")
+if (MSVC)
+    # Changes a compiler warnings to treat warnings as errors.
+    # There is an unused variable to StaticLibraryFactory.cpp:8: abc, so program WON'T compile.
+    set_property(TARGET ${PROJECT_NAME} PROPERTY COMPILE_FLAGS "/w14100 /WX")
 
-# You can also provide compilation flags by following method. Note that each flags must be set separately.
-target_compile_options(${PROJECT_NAME} PUBLIC "-Wall" "-Werror")
+    # You can also provide compilation flags by following method. Note that each flags must be set separately.
+    target_compile_options(${PROJECT_NAME} PUBLIC "/w14100" "/WX")
+else()
+    # Changes a compiler warning to treat warnings as errors.
+    # There is an unused variable to StaticLibraryFactory.cpp:8: abc, so program WON'T compile.
+    set_property(TARGET ${PROJECT_NAME} PROPERTY COMPILE_FLAGS "-Wall -Werror")
+
+    # You can also provide compilation flags by following method. Note that each flags must be set separately.
+    target_compile_options(${PROJECT_NAME} PUBLIC "-Wall" "-Werror")
+
+endif()
 
 # Author: Marcin Serwach
 # Tutorial: https://github.com/iblis-ms/tutorials/tree/master/Cpp/CMake
